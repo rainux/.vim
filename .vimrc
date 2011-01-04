@@ -3,6 +3,8 @@
 " Maintainer: Rainux <rainux@gmail.com>
 " URL:        http://github.com/rainux/vimfiles
 
+source ~/.vim/vundle.vim
+
 " Multi-encoding setting
 function! s:MultiEncodingSetting()
   if has('multi_byte')
@@ -433,6 +435,12 @@ endfor
 
 " ,* is Substitute(Replace)
 nmap ,* :%s/<C-R><C-W>/
+
+" ,bi is :BundleInstall
+nmap ,bi :BundleInstall<CR>
+
+" ,bs is :BundleSearch
+nmap ,bs :BundleSearch<Space>
 
 " ,ff is format code
 nmap ,ff :set ff=unix<CR>:%!fromdos<CR>gg=G:%s/\s\+$//ge<CR>
