@@ -50,7 +50,7 @@ function! s:MultiEncodingSetting()
     " Detect UTF-8 locale, and override CJK setting if needed
     if v:lang =~ 'utf8$' || v:lang =~ 'UTF-8$'
       set encoding=utf-8
-      if has('unix') && !has('win32unix')
+      if has('unix')
         " Only use UTF-8 termencoding when we're in Linux/Unix, cause Windows
         " does not support UTF-8. Mac? I don't know :p
         set termencoding=utf-8
