@@ -302,7 +302,7 @@ function! CustomStatusLineBufSize()
 endfunction
 
 if has('gui_running')
-  execute 'set statusline=%<%1*%f\ %h%m%r%2*\|' .
+  execute 'set statusline=%<%1*%f\ %{fugitive#statusline()}%h%m%r%2*\|' .
         \ '%3*%{&ff}%2*:%3*%{&fenc}%2*:%3*%{&ft}%2*\|' .
         \ '%{CustomStatusLineBufSize()}' .
         \ '%=%b\ 0x%B\ \ \|' .
@@ -310,7 +310,7 @@ if has('gui_running')
         \ '%1*ts%2*:%3*%{&ts}%2*:%1*tw%2*:%3*%{&tw}%2*\|' .
         \ '%06(%l%),%03(%v%)\ %1*%4.4P'
 else
-  execute 'set statusline=%<%1*%f\ %h%m%r%2*\|' .
+  execute 'set statusline=%<%1*%f\ %{fugitive#statusline()}%h%m%r%2*\|' .
         \ '%3*%{&ff}%2*:%3*%{&fenc}%2*:%3*%{&ft}%2*\|' .
         \ '%{CustomStatusLineBufSize()}' .
         \ '%=%b\ 0x%B\ \ ' .
@@ -447,6 +447,18 @@ nmap ,ff :set ff=unix<CR>:%!fromdos<CR>gg=G:%s/\s\+$//ge<CR>
 
 " ,fc is clean code
 nmap ,fc :set ff=unix<CR>:%!fromdos<CR>:%s/\s\+$//ge<CR>
+
+" fugitive mappings
+nmap ,gac :Gcommit --amend<CR>
+nmap ,gb  :Gblame<CR>
+nmap ,gc  :Gcommit<CR>
+nmap ,gd  :Gdiff<CR>
+nmap ,ge  :Gedit<CR>
+nmap ,gg  :Ggrep<Space>
+nmap ,gq  :Git checkout HEAD %<CR>
+nmap ,gr  :Gread<CR>
+nmap ,gs  :Gstatus<CR>
+nmap ,gw  :Gwrite<CR>
 
 " Make it easy to update/reload .vimrc
 nmap ,s :source $HOME/.vimrc<CR>
