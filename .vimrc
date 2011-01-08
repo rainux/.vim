@@ -442,6 +442,20 @@ nmap ,bi :BundleInstall<CR>
 " ,bs is :BundleSearch
 nmap ,bs :BundleSearch<Space>
 
+" NERD commenter mappings
+nmap ,cc        <Plug>NERDCommenterComment
+vmap ,cc        <Plug>NERDCommenterComment
+nmap ,c<Space>  <Plug>NERDCommenterToggle
+vmap ,c<Space>  <Plug>NERDCommenterToggle
+nmap ,cm        <Plug>NERDCommenterMinimal
+vmap ,cm        <Plug>NERDCommenterMinimal
+nmap ,cs        <Plug>NERDCommenterSexy
+vmap ,cs        <Plug>NERDCommenterSexy
+nmap ,cn        <Plug>NERDCommenterNest
+vmap ,cn        <Plug>NERDCommenterNest
+nmap ,cu        <Plug>NERDCommenterUncomment
+vmap ,cu        <Plug>NERDCommenterUncomment
+
 " ,ff is format code
 nmap ,ff :set ff=unix<CR>:%!fromdos<CR>gg=G:%s/\s\+$//ge<CR>
 
