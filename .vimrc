@@ -579,6 +579,14 @@ nmap <Leader>vu <Plug>VCSUpdate
 nmap <Leader>vv <Plug>VCSVimDiff
 
 
+" speeddating
+let g:speeddating_no_mappings = 1
+nmap  <C-A>     <Plug>SpeedDatingUp
+nmap  <C-X>     <Plug>SpeedDatingDown
+nmap d<C-A>     <Plug>SpeedDatingNowUTC
+nmap d<C-X>     <Plug>SpeedDatingNowLocal
+
+
 " Rails Tag List
 "
 " Central additions (also add the functions below)
