@@ -16,6 +16,7 @@ Bundle 'vim2ansi'
 
 " Programming:
 Bundle 'git://github.com/hallettj/jslint.vim.git'
+Bundle 'git://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/tpope/vim-abolish.git'
 Bundle 'git://github.com/tpope/vim-endwise.git'
