@@ -234,6 +234,8 @@ set showbreak=>>
 set shellslash
 set showcmd
 set smartindent
+set undodir=~/.tmp/undodir,.
+set undofile
 set viminfo=!,'1000,<100,c,f1,h,s10,rA:,rB:,n~/.viminfo
 set virtualedit=block
 set visualbell
