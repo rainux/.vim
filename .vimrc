@@ -218,7 +218,6 @@ set directory=~/.tmp,.,/var/tmp,/tmp
 set fileformats=unix,dos
 set guicursor=a:blinkon0
 set grepprg=grep\ -nH\ $*
-set guioptions-=e " Use non-GUI tab pages line since it allow change tabs order by drag & drop
 set helplang=CN
 set history=50
 set ignorecase smartcase smartcase

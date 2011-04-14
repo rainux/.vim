@@ -108,33 +108,30 @@ function! s:SetWinPos(Index)
 endfunction
 
 
-function! s:GuiTabLabel()
-  let label = ''
-  let bufnrlist = tabpagebuflist(v:lnum)
-
-  " Add '+' if one of the buffers in the tab page is modified
-  for bufnr in bufnrlist
-    if getbufvar(bufnr, "&modified")
-      let label = '+'
-      break
-    endif
-  endfor
+function! GuiTabLabel()
+  let label = v:lnum . '. '
 
   " Append the number of windows in the tab page if more than one
   let wincount = tabpagewinnr(v:lnum, '$')
   if wincount > 1
-    let label .= wincount
+    let label .= wincount . ' '
   endif
-  if label != ''
-    let label .= ' '
-  endif
+
+  " Add '+' if one of the buffers in the tab page is modified
+  let bufnrlist = tabpagebuflist(v:lnum)
+  for bufnr in bufnrlist
+    if getbufvar(bufnr, "&modified")
+      let label .= '+ '
+      break
+    endif
+  endfor
 
   " Append the buffer name
   return label . fnamemodify(bufname(bufnrlist[tabpagewinnr(v:lnum) - 1]), ':t')
 endfunction
 
 
-set guitablabel=%{s:GuiTabLabel()}
+set guitablabel=%{GuiTabLabel()}
 
 " Initialize GUI font and window settings
 call s:SetGuiFont(g:CUR_FONT_INDEX)
