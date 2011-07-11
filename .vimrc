@@ -265,25 +265,6 @@ try
 catch
 endtry
 
-" Customizing some default highlight
-function! s:CustomHighlight()
-  if !exists('g:colors_name') || g:colors_name == 'default'
-    highlight LineNr gui=NONE guifg=#666666 guibg=#e8e8e8 cterm=NONE ctermfg=DarkGray ctermbg=LightGray
-    " Status line
-    highlight User1  gui=bold guifg=#000000 guibg=#f3f3f3 cterm=NONE ctermfg=Black    ctermbg=LightGray
-    highlight User2  gui=bold guifg=#888888 guibg=#f3f3f3 cterm=NONE ctermfg=DarkGray ctermbg=LightGray
-    highlight User3  gui=bold guifg=#0000ff guibg=#f3f3f3 cterm=NONE ctermfg=Blue     ctermbg=LightGray
-    highlight User4  gui=bold guifg=#ff0000 guibg=#f3f3f3 cterm=NONE ctermfg=Red      ctermbg=LightGray
-  endif
-endfunction
-
-call s:CustomHighlight()
-if has('autocmd')
-  autocmd CursorHold * call s:CustomHighlight()
-  autocmd FocusGained * call s:CustomHighlight()
-  autocmd VimEnter * call s:CustomHighlight()
-endif
-
 " Customizing status line
 function! CustomStatusLineBufSize()
   let BufSize = line2byte(line('$') + 1) - 1
