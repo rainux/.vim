@@ -44,6 +44,7 @@ Bundle 'lua-support'
 Bundle 'matchit.zip'
 Bundle 'std_c.zip'
 Bundle 'taglist.vim'
+Bundle 'po.vim--Jelenak'
 
 " Ruby/Rails Programming:
 Bundle 'git://github.com/vim-ruby/vim-ruby.git'

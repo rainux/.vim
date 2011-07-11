@@ -130,3 +130,6 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/po.vim--Jelenak"]
+	path = bundle/po.vim--Jelenak
+	url = http://github.com/vim-scripts/po.vim--Jelenak.git
