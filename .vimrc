@@ -151,7 +151,7 @@ if has('autocmd')
           \ setlocal tags+=~/.gem/tags |
           \ call s:ToggleIsKeyword(':,?,!', 1) |
 
-    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|nsis\|sass\|vim\)$'
+    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|nsis\|sass\|vim\)$'
     let s:indent8_regex = '^\%(css\|gitconfig\)$'
 
     function! s:BufEnter()
