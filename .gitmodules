@@ -136,3 +136,6 @@
 [submodule "bundle/po.vim--Jelenak"]
 	path = bundle/po.vim--Jelenak
 	url = http://github.com/vim-scripts/po.vim--Jelenak.git
+[submodule "bundle/railscasts"]
+	path = bundle/railscasts
+	url = http://github.com/vim-scripts/railscasts.git

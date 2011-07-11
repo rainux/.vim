@@ -13,6 +13,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'matrix.vim--Yang'
 Bundle 'taskpaper.vim'
 Bundle 'vim2ansi'
+Bundle 'railscasts'
 
 " Programming:
 Bundle 'git://github.com/godlygeek/tabular.git'
