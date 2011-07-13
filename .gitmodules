@@ -139,3 +139,6 @@
 [submodule "bundle/railscasts"]
 	path = bundle/railscasts
 	url = http://github.com/vim-scripts/railscasts.git
+[submodule "bundle/Color-Scheme-Test"]
+	path = bundle/Color-Scheme-Test
+	url = git://github.com/rainux/Color-Scheme-Test.git
