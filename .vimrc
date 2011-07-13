@@ -567,6 +567,13 @@ nmap <Leader>vu <Plug>VCSUpdate
 nmap <Leader>vv <Plug>VCSVimDiff
 
 
+" surround
+"
+" Work with gettext easier
+let g:surround_45 = "_('\r')"
+let g:surround_95 = "_(\"\r\")"
+
+
 " speeddating
 let g:speeddating_no_mappings = 1
 nmap  <C-A>     <Plug>SpeedDatingUp
