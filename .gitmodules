@@ -142,3 +142,6 @@
 [submodule "bundle/Color-Scheme-Test"]
 	path = bundle/Color-Scheme-Test
 	url = git://github.com/rainux/Color-Scheme-Test.git
+[submodule "bundle/desert.vim"]
+	path = bundle/desert.vim
+	url = git://github.com/rainux/desert.vim.git
