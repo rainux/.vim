@@ -211,8 +211,6 @@ endif
 set autoindent
 set background=dark
 set backspace=indent,eol,start
-set backup
-set backupdir=./.backup,~/.backup,~
 set completeopt=menuone,longest,preview
 set directory=~/.tmp,.,/var/tmp,/tmp
 set fileformats=unix,dos
