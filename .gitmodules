@@ -145,3 +145,6 @@
 [submodule "bundle/desert.vim"]
 	path = bundle/desert.vim
 	url = git://github.com/rainux/desert.vim.git
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
