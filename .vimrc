@@ -333,10 +333,7 @@ map <F3> :set hlsearch!<CR>
 imap <F3> <Esc><F3>a
 
 " F4 is Toggle Tag List
-" Rails Tag List will config this
-"
-" map <F4> :TlistToggle<CR>
-" imap <F4> <Esc><F4>a
+map <F4> :TagbarToggle<CR>
 
 " F5 is Toggle Mini Buffer Explorer
 map <F5> :BufExplorer<CR>
@@ -573,88 +570,6 @@ nmap  <C-A>     <Plug>SpeedDatingUp
 nmap  <C-X>     <Plug>SpeedDatingDown
 nmap d<C-A>     <Plug>SpeedDatingNowUTC
 nmap d<C-X>     <Plug>SpeedDatingNowLocal
-
-
-" Rails Tag List
-"
-" Central additions (also add the functions below)
-command! RTlist call <SID>CtagAdder('app/models', 'app/controllers', 'app/views', 'app/stylesheets', 'public')
-
-map <S-F4> :RTlist<CR>
-
-" Optional, handy TagList settings
-nnoremap <silent> <F4> :Tlist<CR>
-inoremap <F4> <Esc><F4>a
-
-let Tlist_Compact_Format = 1
-let Tlist_Ctags_Cmd = 'ctags --fields=+lS'
-let Tlist_File_Fold_Auto_Close = 1
-
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-
-let Tlist_WinWidth = 40
-
-" Function that gets the dirtrees for the provided dirs and feeds
-" them to the TlAddAddFiles function below
-function! s:CtagAdder(...)
-  let index = 0
-  let s:dir_list = ''
-  let is_rails_dir = 0
-  while index < a:0
-    let index = index + 1
-    if isdirectory(a:{index}) || isdirectory(g:rails_root_dir . '/' . a:{index})
-      let is_rails_dir = 1
-    else
-      continue
-    end
-    let s:dir_list = s:dir_list . s:TlGetDirs(a:{index})
-  endwhile
-  if is_rails_dir
-    call s:TlAddAddFiles(s:dir_list)
-    wincmd p
-    exec 'normal ='
-    wincmd p
-  else
-    echohl ErrorMsg | echo 'This directory does not contain a Rails project' | echohl None
-  end
-endfunction
-
-" Adds *.rb, *.rhtml and *.css files to TagList from a given list
-" of dirs
-function! s:TlAddAddFiles(dir_list)
-  let dirlist = a:dir_list
-  let s:olddir = getcwd()
-  while strlen(dirlist) > 0
-    let curdir = substitute (dirlist, '|.*', '', '')
-    let dirlist = substitute (dirlist, '[^|]*|\?', '', '')
-    exec 'cd ' . g:rails_root_dir
-    exec 'TlistAddFiles ' . curdir . '/*.rb'
-    exec 'TlistAddFiles ' . curdir . '/*.haml'
-    exec 'TlistAddFiles ' . curdir . '/*.sass'
-    exec 'TlistAddFiles ' . curdir . '/*.js'
-  endwhile
-  exec 'cd ' . s:olddir
-endfunction
-
-" Gets all dirs within a given dir, returns them in a string,
-" separated by '|''s
-function! s:TlGetDirs(start_dir)
-  let s:olddir = getcwd()
-  exec 'cd ' . g:rails_root_dir . '/' . a:start_dir
-  let dirlist = a:start_dir . '|'
-  let dirlines = glob ('*')
-  let dirlines = substitute (dirlines, "\n", '/', 'g')
-  while strlen(dirlines) > 0
-    let curdir = substitute (dirlines, '/.*', '', '')
-    let dirlines = substitute (dirlines, '[^/]*/\?', '', '')
-    if isdirectory(g:rails_root_dir . '/' . a:start_dir . '/' . curdir)
-      let dirlist = dirlist . s:TlGetDirs(a:start_dir . '/' . curdir)
-    endif
-  endwhile
-  exec 'cd ' . s:olddir
-  return dirlist
-endfunction
 
 
 " vim: set sts=2 sw=2:
