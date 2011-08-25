@@ -154,3 +154,6 @@
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle/vim-vala"]
+	path = bundle/vim-vala
+	url = git://github.com/rainux/vim-vala.git
