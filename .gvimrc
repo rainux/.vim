@@ -167,9 +167,7 @@ endfunction
 
 " F8 is Change GUI font
 map <F8> :call <SID>ChangeGuiFont(0)<CR>
-map <S-F8> :call <SID>ChangeGuiFont(1)<CR>
 imap <F8> <Esc><F8>a
-imap <S-F8> <Esc><S-F8>a
 
 function! s:ChangeGuiFont(Inverse)
   let OldIndex = g:CUR_FONT_INDEX
