@@ -320,8 +320,10 @@ function! s:ToggleIsKeyword(...)
   " Second param means 'force add', not 'toggle'
   if a:0 > 1 || stridx(&iskeyword, a:1) < 0
     exec 'setlocal iskeyword+=' . a:1
+    echo '&iskeyword now contain "' . a:1 . '"'
   else
     exec 'setlocal iskeyword-=' . a:1
+    echo '&iskeyword now not contain "' . a:1 . '"'
   endif
 endfunction
 
