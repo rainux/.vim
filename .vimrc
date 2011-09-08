@@ -312,9 +312,9 @@ imap <Down> <Esc><Down>a
 map <F1> :call <SID>ToggleIndentStyle()<CR>
 imap <F1> :call <Esc><F1>a
 
-" Shift-F1 is Toggle iskeyword contain or not contain '_'
-map <S-F1> :call <SID>ToggleIsKeyword('_')<CR>
-imap <S-F1> <Esc><S-F1>a
+" F2 is Toggle iskeyword contain or not contain '_'
+map <F2> :call <SID>ToggleIsKeyword('_')<CR>
+imap <F2> <Esc><F2>a
 
 function! s:ToggleIsKeyword(...)
   " Second param means 'force add', not 'toggle'
@@ -326,9 +326,6 @@ function! s:ToggleIsKeyword(...)
     echo '&iskeyword now not contain "' . a:1 . '"'
   endif
 endfunction
-
-" F2 is Toggle wrap
-" Code moved to .gvimrc
 
 " F3 is Reverse hlsearch
 map <F3> :set hlsearch!<CR>
@@ -377,6 +374,9 @@ function! s:Run()
     endif
   endif
 endfunction
+
+" F11 is Toggle wrap
+" Code moved to .gvimrc
 
 " CTRL-F9 is Compile
 map <C-F9> :call <SID>Compile()<CR>

@@ -149,22 +149,6 @@ color desert
 " ----------------------------------------------------------------------------
 " Key mappings
 "
-" F2 is Toggle wrap
-map <F2> :call <SID>ToggleGuiOption("b")<CR>:set wrap!<CR>
-imap <F2> <Esc><F2>a
-
-function! s:ToggleGuiOption(option)
-  " If a:option is already set in guioptions, then we want to remove it
-  if match(&guioptions, "\\C" . a:option) > -1
-    exec "set go-=" . a:option
-  else
-    exec "set go+=" . a:option
-  endif
-  if has("gui_running")
-    call s:SetWinPos(g:CUR_FONT_INDEX)
-  endif
-endfunction
-
 " F8 is Change GUI font
 map <F8> :call <SID>ChangeGuiFont(0)<CR>
 imap <F8> <Esc><F8>a
@@ -194,5 +178,21 @@ function! s:ChangeGuiFont(Inverse)
     echohl ErrorMsg | echo iconv("\rError changing GUI font. Maybe selected font \"" .
           \ s:GuiFontList[g:CUR_FONT_INDEX] . "\" not exists.", &tenc, &enc)
           \ | echohl None
+  endif
+endfunction
+
+" F11 is Toggle wrap
+map <F11> :call <SID>ToggleGuiOption("b")<CR>:set wrap!<CR>
+imap <F11> <Esc><F11>a
+
+function! s:ToggleGuiOption(option)
+  " If a:option is already set in guioptions, then we want to remove it
+  if match(&guioptions, "\\C" . a:option) > -1
+    exec "set go-=" . a:option
+  else
+    exec "set go+=" . a:option
+  endif
+  if has("gui_running")
+    call s:SetWinPos(g:CUR_FONT_INDEX)
   endif
 endfunction
