@@ -456,7 +456,7 @@ nmap ,gw  :Gwrite<CR>
 
 " Make it easy to update/reload .vimrc
 nmap ,s :source $HOME/.vimrc<CR>
-nmap ,v :e $HOME/.vimrc<CR>
+nmap ,v :tabe $HOME/.vimrc<CR>
 
 " ,> ,< is next or prev error
 nmap ,> :cnext<CR>
