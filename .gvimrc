@@ -25,7 +25,7 @@ end
 if has("gui_gtk2")
   " Define a font list for GTK2 with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
-        \"Monaco\\ 11",
+        \"Monaco\\ 13",
         \"Bitstream\\ Vera\\ Sans\\ Mono\\ 11",
         \"DejaVu\\ Sans\\ Mono\\ 11",
         \"Inconsolat1\\ 11",
