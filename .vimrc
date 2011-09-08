@@ -584,5 +584,8 @@ let g:tagbar_type_coffee = {
       \ 'sort': 0
       \ }
 
+" po.vim
+let maplocalleader = ','
+
 
 " vim: set sts=2 sw=2:
