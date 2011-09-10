@@ -149,7 +149,7 @@ if has('autocmd')
     autocmd FileType ruby,eruby
           \ setlocal omnifunc=rubycomplete#Complete |
           \ setlocal tags+=~/.gem/tags |
-          \ call s:ToggleIsKeyword(':,?,!', 1) |
+          \ setlocal iskeyword+=:,?,! |
 
     let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|nsis\|sass\|vim\)$'
     let s:indent8_regex = '^\%(css\|gitconfig\)$'
@@ -316,14 +316,13 @@ imap <F1> :call <Esc><F1>a
 map <F2> :call <SID>ToggleIsKeyword('_')<CR>
 imap <F2> <Esc><F2>a
 
-function! s:ToggleIsKeyword(...)
-  " Second param means 'force add', not 'toggle'
-  if a:0 > 1 || stridx(&iskeyword, a:1) < 0
-    exec 'setlocal iskeyword+=' . a:1
-    echo '&iskeyword now contain "' . a:1 . '"'
+function! s:ToggleIsKeyword(char)
+  if stridx(&iskeyword, a:char) < 0
+    exec 'setlocal iskeyword+=' . a:char
+    echo '&iskeyword now contain "' . a:char . '"'
   else
-    exec 'setlocal iskeyword-=' . a:1
-    echo '&iskeyword now not contain "' . a:1 . '"'
+    exec 'setlocal iskeyword-=' . a:char
+    echo '&iskeyword now not contain "' . a:char . '"'
   endif
 endfunction
 
