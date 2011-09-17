@@ -22,6 +22,7 @@ Bundle 'railscasts'
 " Programming:
 Bundle 'git://github.com/godlygeek/tabular.git'
 Bundle 'git://github.com/hallettj/jslint.vim.git'
+Bundle 'git://github.com/jnwhiteh/vim-golang.git'
 Bundle 'git://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/rainux/vim-vala.git'
