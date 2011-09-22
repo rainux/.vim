@@ -57,6 +57,7 @@ Bundle 'po.vim--Jelenak'
 " Ruby/Rails Programming:
 Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 Bundle 'git://github.com/nelstrom/vim-textobj-rubyblock.git'
+Bundle 'git://github.com/tpope/vim-bundler.git'
 Bundle 'git://github.com/tpope/vim-cucumber.git'
 Bundle 'git://github.com/tpope/vim-haml.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
