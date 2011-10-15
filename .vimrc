@@ -455,7 +455,7 @@ nmap ,gw  :Gwrite<CR>
 
 " Make it easy to update/reload .vimrc
 nmap ,s :source $HOME/.vimrc<CR>
-nmap ,v :tabe $HOME/.vimrc<CR>
+nmap ,v :tabe $HOME/.vim/.vimrc<CR>
 
 " ,t ,b is activate Command-T
 function! s:ProjectRoot()
