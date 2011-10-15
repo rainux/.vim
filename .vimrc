@@ -457,6 +457,22 @@ nmap ,gw  :Gwrite<CR>
 nmap ,s :source $HOME/.vimrc<CR>
 nmap ,v :tabe $HOME/.vimrc<CR>
 
+" ,t ,b is activate Command-T
+function! s:ProjectRoot()
+  if exists('b:rails_root')
+    return b:rails_root
+  elseif exists('b:bundler_root')
+    return b:bundler_root
+  elseif exists('b:rake_root')
+    return b:rake_root
+  elseif exists('b:git_dir')
+    return fnamemodify(b:git_dir, ':p:h:h')
+  endif
+endfunction
+
+nmap ,t :execute 'CommandT ' . <SID>ProjectRoot()<CR>
+nmap ,b :CommandTBuffer<CR>
+
 " ,> ,< is next or prev error
 nmap ,> :cnext<CR>
 nmap ,< :cNext<CR>
