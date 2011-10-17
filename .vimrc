@@ -470,7 +470,7 @@ function! s:ProjectRoot()
   endif
 endfunction
 
-nmap ,t :execute 'CommandT ' . <SID>ProjectRoot()<CR>
+nmap ,t :execute 'CommandT ' . fnameescape(<SID>ProjectRoot())<CR>
 nmap ,b :CommandTBuffer<CR>
 
 " ,> ,< is next or prev error
