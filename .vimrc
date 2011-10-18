@@ -553,6 +553,12 @@ let g:rubycomplete_rails = 1
 let g:rubycomplete_rails_proactive = 1
 
 
+" ruby syntax
+let g:ruby_fold = 1
+let g:ruby_minlines = 200
+let g:ruby_operators = 1
+
+
 " NERD commenter
 let g:NERDDefaultNesting = 1
 let g:NERDShutUp = 1
