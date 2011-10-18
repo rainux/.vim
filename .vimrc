@@ -214,6 +214,9 @@ set backspace=indent,eol,start
 set completeopt=menuone,longest,preview
 set directory=~/.vim/tmp,/var/tmp,/tmp
 set fileformats=unix,dos
+set foldcolumn=4
+set foldlevelstart=1
+set foldmethod=indent
 set guicursor=a:blinkon0
 set grepprg=grep\ -nH\ $*
 set helplang=CN
@@ -256,6 +259,12 @@ function! MyDiff()
     let diffprg = 'diff'
   endif
   silent execute '!' . diffprg . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+endfunction
+
+set foldtext=MyFoldText()
+function! MyFoldText()
+  let foldtext = substitute(foldtext(), '\s\+\d\+\s\+lines:\s\+', ' ', 'g')
+  return foldtext
 endfunction
 
 " Force read viminfo
