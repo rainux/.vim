@@ -299,13 +299,13 @@ function! FugitiveStatusLine()
   endif
 endfunction
 
-execute 'set statusline=%<%1*%f\ %{FugitiveStatusLine()}%h%m%r%2*\|' .
-      \ '%3*%{&ff}%2*:%3*%{&fenc}%2*:%3*%{&ft}%2*\|' .
+execute 'set statusline=%<%f\ %{FugitiveStatusLine()}%h%m%r\|' .
+      \ '%{&ff}:%{&fenc}:%{&ft}\|' .
       \ '%{CustomStatusLineBufSize()}' .
       \ '%=%b\ 0x%B\ \ \|' .
-      \ '%1*sts%2*:%3*%{&sts}%2*:%1*sw%2*:%3*%{&sw}%2*:' .
-      \ '%1*ts%2*:%3*%{&ts}%2*:%1*tw%2*:%3*%{&tw}%2*\|' .
-      \ '%06(%l%),%03(%v%)\ %1*%4.4P'
+      \ 'sts:%{&sts}:sw:%{&sw}:' .
+      \ 'ts:%{&ts}:tw:%{&tw}\|' .
+      \ '%06(%l%),%03(%v%)\ %4.4P'
 
 
 " ----------------------------------------------------------------------------
