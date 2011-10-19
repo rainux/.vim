@@ -291,7 +291,15 @@ function! CustomStatusLineBufSize()
   return BufSize
 endfunction
 
-execute 'set statusline=%<%1*%f\ %{fugitive#statusline()}%h%m%r%2*\|' .
+function! FugitiveStatusLine()
+  if exists('g:loaded_fugitive')
+    return fugitive#statusline()
+  else
+    return ''
+  endif
+endfunction
+
+execute 'set statusline=%<%1*%f\ %{FugitiveStatusLine()}%h%m%r%2*\|' .
       \ '%3*%{&ff}%2*:%3*%{&fenc}%2*:%3*%{&ft}%2*\|' .
       \ '%{CustomStatusLineBufSize()}' .
       \ '%=%b\ 0x%B\ \ \|' .
