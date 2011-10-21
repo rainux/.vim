@@ -143,8 +143,6 @@ if has("autocmd")
   autocmd GUIEnter * call s:SetWinPos(g:CUR_FONT_INDEX)
 endif
 
-color desert
-
 
 " ----------------------------------------------------------------------------
 " Key mappings

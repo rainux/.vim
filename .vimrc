@@ -307,6 +307,8 @@ execute 'set statusline=%<%f\ %{FugitiveStatusLine()}%h%m%r\|' .
       \ 'ts:%{&ts}:tw:%{&tw}\|' .
       \ '%06(%l%),%03(%v%)\ %4.4P'
 
+color desert
+
 
 " ----------------------------------------------------------------------------
 " Key mappings
