@@ -609,6 +609,7 @@ nmap  <C-X>     <Plug>SpeedDatingDown
 nmap d<C-A>     <Plug>SpeedDatingNowUTC
 nmap d<C-X>     <Plug>SpeedDatingNowLocal
 
+
 " Tagbar
 let g:tagbar_type_coffee = {
       \ 'ctagstype': 'CoffeeScript',
@@ -620,8 +621,13 @@ let g:tagbar_type_coffee = {
       \ 'sort': 0
       \ }
 
+
 " po.vim
 let maplocalleader = ','
+
+
+" Netrw
+let g:netrw_home = expand('~/.vim/tmp')
 
 
 " vim: set sts=2 sw=2:
