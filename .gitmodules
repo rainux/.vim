@@ -142,9 +142,6 @@
 [submodule "bundle/Color-Scheme-Test"]
 	path = bundle/Color-Scheme-Test
 	url = git://github.com/rainux/Color-Scheme-Test.git
-[submodule "bundle/desert.vim"]
-	path = bundle/desert.vim
-	url = git://github.com/rainux/desert.vim.git
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = git://github.com/mileszs/ack.vim.git
@@ -163,3 +160,6 @@
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule "bundle/vim-desert-warm-256"]
+	path = bundle/vim-desert-warm-256
+	url = git://github.com/rainux/vim-desert-warm-256.git
