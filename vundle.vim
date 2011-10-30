@@ -1,5 +1,5 @@
 " Initialize vundle
-set runtimepath+=~/.vim/bundle/vundle
+set runtimepath^=~/.vim/bundle/vundle
 call vundle#rc()
 
 " Bundles:
@@ -35,7 +35,7 @@ Bundle 'git://github.com/tpope/vim-git.git'
 Bundle 'git://github.com/tpope/vim-markdown.git'
 Bundle 'git://github.com/tpope/vim-ragtag.git'
 Bundle 'git://github.com/tpope/vim-repeat.git'
-Bundle 'git://github.com/tpope/vim-speeddating.git'
+Bundle 'git://github.com/tpope/vim-speeddating.git', {'bind': 0, 'tags': ['date', 'slow']}
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/tpope/vim-unimpaired.git'
 Bundle 'git://repo.or.cz/vcscommand'
@@ -44,8 +44,8 @@ Bundle 'JavaScript-syntax'
 Bundle 'NSIS-syntax-highlighting'
 Bundle 'OOP-javascript-indentation'
 Bundle 'SingleCompile'
-Bundle 'bash-support.vim'
-Bundle 'c.vim'
+Bundle 'bash-support.vim', {'bind': 0, 'tags': ['bash', 'slow']}
+Bundle 'c.vim', {'bind': 0, 'tags': ['c', 'slow']}
 Bundle 'echofunc.vim'
 Bundle 'jQuery'
 Bundle 'lua-support'
@@ -63,3 +63,5 @@ Bundle 'git://github.com/tpope/vim-haml.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'git://github.com/tpope/vim-rake.git'
 Bundle 'git://github.com/bbommarito/vim-slim'
+
+BundleBind!
