@@ -9,7 +9,7 @@
 	url = git://github.com/scrooloose/nerdtree.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = git://github.com/rainux/Command-T.git
 [submodule "bundle/DrawIt"]
 	path = bundle/DrawIt
 	url = http://github.com/vim-scripts/DrawIt.git
