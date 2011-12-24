@@ -191,15 +191,6 @@ if has('autocmd')
           \ if line("'\"") > 0 && line("'\"") <= line('$') |
           \   execute 'normal g`"' |
           \ endif |
-
-    function! s:BufEnterRails()
-      if exists('b:rails_root')
-        let g:rails_root_dir = b:rails_root
-      endif
-    endfunction
-
-    autocmd User BufEnterRails call s:BufEnterRails()
-
   augroup END
 endif
 
