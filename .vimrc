@@ -495,8 +495,8 @@ function! s:InsertDate(Also_Time)
 endfunction
 
 " \hash Convert hash to Ruby 1.9's JSON-like style
-nmap <Leader>hash :%s/:\([^:]\{-1,}\) *=>/\1:/gce<CR>
-vmap <Leader>hash :s/:\([^:]\{-1,}\) *=>/\1:/gce<CR>
+nmap <Leader>hash :%s/:\([^:`'"]\{-1,}\) *=>/\1:/gce<CR>
+vmap <Leader>hash :s/:\([^:`'"]\{-1,}\) *=>/\1:/gce<CR>
 
 " \tu \tg Convert to UTF-8, Convert to GBK
 nmap <Leader>tu   :set fenc=utf8<CR>:w<CR>
