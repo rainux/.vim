@@ -1,3 +1,5 @@
+Rnavcommand decorator app/decorators      -glob=**/*  -suffix=_decorator.rb
+Rnavcommand presenter app/presenters      -glob=**/*  -suffix=_presenter.rb
 Rnavcommand coffee    app/coffeescripts   -glob=**/*  -suffix=.coffee
 Rnavcommand sass      app/stylesheets     -glob=**/*  -suffix=.sass
 Rnavcommand scss      app/stylesheets     -glob=**/*  -suffix=.scss
