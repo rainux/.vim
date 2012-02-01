@@ -502,6 +502,10 @@ vmap <Leader>hash :s/:\([^:`'"]\{-1,}\) *=>/\1:/gce<CR>
 nmap <Leader>tu   :set fenc=utf8<CR>:w<CR>
 nmap <Leader>tg   :set fenc=gbk<CR>:w<CR>
 
+" \str Convert double quotation string to single quotation
+nmap <Leader>str :%s/[\\]\@<!\(["]\)\(\(\(#{\)\@<![^"]\)\+\)\1/'\2'/gce<CR>
+vmap <Leader>str :s/[\\]\@<!\(["]\)\(\(\(#{\)\@<![^"]\)\+\)\1/'\2'/gce<CR>
+
 " \sym String to Symbol for Ruby
 nmap <Leader>sym :%s/[\\]\@<!\(['"]\)\(\w\+\)\1/:\2/gce<CR>
 vmap <Leader>sym :s/[\\]\@<!\(['"]\)\(\w\+\)\1/:\2/gce<CR>
