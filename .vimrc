@@ -507,8 +507,8 @@ nmap <Leader>str :%s/[\\]\@<!\(["]\)\(\(\(#{\)\@<![^"]\)\+\)\1/'\2'/gce<CR>
 vmap <Leader>str :s/[\\]\@<!\(["]\)\(\(\(#{\)\@<![^"]\)\+\)\1/'\2'/gce<CR>
 
 " \sym String to Symbol for Ruby
-nmap <Leader>sym :%s/[\\]\@<!\(['"]\)\(\w\+\)\1/:\2/gce<CR>
-vmap <Leader>sym :s/[\\]\@<!\(['"]\)\(\w\+\)\1/:\2/gce<CR>
+nmap <Leader>sym :%s/[\\]\@<!\(['"]\)\([0-9A-Za-z_$]\+\)\1/:\2/gce<CR>
+vmap <Leader>sym :s/[\\]\@<!\(['"]\)\([0-9A-Za-z_$]\+\)\1/:\2/gce<CR>
 
 " Don't use Ex mode, use Q for formatting
 nmap Q gq
