@@ -166,3 +166,9 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/tslime.vim"]
+	path = bundle/tslime.vim
+	url = git://github.com/rainux/tslime.vim.git
+[submodule "bundle/vim-turbux"]
+	path = bundle/vim-turbux
+	url = git://github.com/rainux/vim-turbux.git
