@@ -163,3 +163,6 @@
 [submodule "bundle/vim-desert-warm-256"]
 	path = bundle/vim-desert-warm-256
 	url = git://github.com/rainux/vim-desert-warm-256.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git

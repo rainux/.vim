@@ -269,40 +269,6 @@ try
 catch
 endtry
 
-" Customizing status line
-function! CustomStatusLineBufSize()
-  let BufSize = line2byte(line('$') + 1) - 1
-  if BufSize < 0
-    let BufSize = 0
-  endif
-  " Add commas
-  let Remain = BufSize
-  let BufSize = ''
-  while strlen(Remain) > 3
-    let BufSize = ',' . strpart(Remain, strlen(Remain) - 3) . BufSize
-    let Remain = strpart(Remain, 0, strlen(Remain) - 3)
-  endwhile
-  let BufSize = Remain . BufSize
-  let BufSize = BufSize . ' byte'
-  return BufSize
-endfunction
-
-function! FugitiveStatusLine()
-  if exists('g:loaded_fugitive')
-    return fugitive#statusline()
-  else
-    return ''
-  endif
-endfunction
-
-execute 'set statusline=%<%f\ %{FugitiveStatusLine()}%h%m%r\|' .
-      \ '%{&ff}:%{&fenc}:%{&ft}\|' .
-      \ '%{CustomStatusLineBufSize()}' .
-      \ '%=%b\ 0x%B\ \ \|' .
-      \ 'sts:%{&sts}:sw:%{&sw}:' .
-      \ 'ts:%{&ts}:tw:%{&tw}\|' .
-      \ '%06(%l%),%03(%v%)\ %4.4P'
-
 color desert-warm-256
 
 
@@ -628,6 +594,13 @@ let maplocalleader = ','
 
 " Netrw
 let g:netrw_home = expand('~/.vim/tmp')
+
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
+call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
+call Pl#Theme#InsertSegment('filesize', 'after', 'filetype')
+call Pl#Theme#InsertSegment(['raw', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'], 'after', 'filesize')
 
 
 " vim: set sts=2 sw=2:
