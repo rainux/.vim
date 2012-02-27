@@ -388,11 +388,11 @@ endfor
 " ,* is Substitute(Replace)
 nmap ,* :%s/<C-R><C-W>/
 
-" ,bi is :BundleInstall
-nmap ,bi :BundleInstall<CR>
+" ,vi is :BundleInstall
+nmap ,vi :BundleInstall<CR>
 
-" ,bs is :BundleSearch
-nmap ,bs :BundleSearch<Space>
+" ,vs is :BundleSearch
+nmap ,vs :BundleSearch<Space>
 
 " NERD commenter mappings
 nmap ,cc        <Plug>NERDCommenterComment
