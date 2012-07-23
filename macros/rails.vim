@@ -28,6 +28,6 @@ autocmd User Bundler
 " This will prevent us to ever write it again
 highlight ObsoleteHashRocket ctermbg=red guibg=red
 au ColorScheme * highlight ObsoleteHashRocket guibg=red
-au BufEnter * match ObsoleteHashRocket /\(:\w\+\s*\)\@<==>/
-au InsertEnter * match ObsoleteHashRocket /\(:\w\+\s*\)\@<==>/
-au InsertLeave * match ObsoleteHashRocket /\(:\w\+\s*\)\@<==>/
+au BufEnter * match ObsoleteHashRocket /\(:\<\w\+\s*\)\@<==>/
+au InsertEnter * match ObsoleteHashRocket /\(\<:\w\+\s*\)\@<==>/
+au InsertLeave * match ObsoleteHashRocket /\(\<:\w\+\s*\)\@<==>/
