@@ -20,6 +20,7 @@ Run the following commands in your terminal with bash/zsh:
     cd
     ln -s .vim/.gvimrc .
     ln -s .vim/.vimrc .
+    vim -Ec "exec 'BundleDocs' | q"
 
 Windows
 -------
@@ -33,3 +34,4 @@ Run the following commands in cmd.exe:
     cd %HOME%
     copy .vim\.gvimrc .
     copy .vim\.vimrc .
+    vim -Ec "exec 'BundleDocs' | q"
