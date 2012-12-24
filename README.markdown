@@ -17,9 +17,8 @@ Run the following commands in your terminal with bash/zsh:
     git clone git://github.com/rainux/.vim.git
     cd .vim
     git submodule update --init
-    cd
-    ln -s .vim/.gvimrc .
-    ln -s .vim/.vimrc .
+    ln -s .vim/.gvimrc ~
+    ln -s .vim/.vimrc ~
     vim -Ec "exec 'BundleDocs' | q"
 
 Windows
@@ -31,7 +30,6 @@ Run the following commands in cmd.exe:
     git clone git://github.com/rainux/.vim.git
     cd .vim
     git submodule update --init
-    cd %HOME%
-    copy .vim\.gvimrc .
-    copy .vim\.vimrc .
+    copy .gvimrc.win "%HOME%\.gvimrc"
+    copy .vimrc.win "%HOME%\.vimrc"
     vim -Ec "exec 'BundleDocs' | q"
