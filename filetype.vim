@@ -11,9 +11,9 @@ au BufNewFile,BufRead *.nsi,*.nsh			setf nsis
 
 " Pascal / Delphi
 if (1==1) "change to "1==0" to use original syntax
-    au BufNewFile,BufRead *.pas,*.PAS,*.inc,*.INC,*.pp,*.PP setf delphi
+  au BufNewFile,BufRead *.pas,*.PAS setf delphi
 else
-    au BufNewFile,BufRead *.pas,*.PAS,*.inc,*.INC setf pascal
+  au BufNewFile,BufRead *.pas,*.PAS setf pascal
 endif
 " Delphi project file
 au BufNewFile,BufRead *.dpr,*.DPR setf delphi
@@ -30,6 +30,7 @@ au BufNewFile,BufRead *.desk,*.DESK setf dosini
 au BufNewFile,BufRead *.dti,*.DTI setf dosini
 " Delphi .BPG = Makefile
 au BufNewFile,BufRead *.bpg,*.BPG setf make|setlocal makeprg=make\ -f\ %
+
 " Plane text file
 au BufNewFile,BufRead *.txt setf text
 

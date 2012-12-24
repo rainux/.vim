@@ -145,7 +145,6 @@ if has('autocmd')
 
     autocmd FileType c compiler gcc
     autocmd FileType d compiler dmd
-    autocmd FileType delphi compiler borland
     autocmd FileType ruby,eruby
           \ setlocal omnifunc=rubycomplete#Complete |
           \ setlocal tags+=~/.gem/tags |
