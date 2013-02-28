@@ -455,9 +455,9 @@ nmap ,b :CommandTBuffer<CR>
 nmap ,> :cnext<CR>
 nmap ,< :cNext<CR>
 
-" \date \time Insert current date & time
-nmap <Leader>date :call <SID>InsertDate(0)<CR>
-nmap <Leader>time :call <SID>InsertDate(1)<CR>
+" \idate \itime Insert current date & time
+nmap <Leader>idate :call <SID>InsertDate(0)<CR>
+nmap <Leader>itime :call <SID>InsertDate(1)<CR>
 
 function! s:InsertDate(Also_Time)
   let Fmt = '%x'
@@ -472,9 +472,9 @@ endfunction
 nmap <Leader>hash :%s/:\([^:`'"]\{-1,}\) *=>/\1:/gce<CR>
 vmap <Leader>hash :s/:\([^:`'"]\{-1,}\) *=>/\1:/gce<CR>
 
-" \tu \tg Convert to UTF-8, Convert to GBK
-nmap <Leader>tu   :set fenc=utf8<CR>:w<CR>
-nmap <Leader>tg   :set fenc=gbk<CR>:w<CR>
+" \ftu \ftg Convert to UTF-8, Convert to GBK
+nmap <Leader>ftu   :set fenc=utf8<CR>:w<CR>
+nmap <Leader>ftg   :set fenc=gbk<CR>:w<CR>
 
 " \str Convert double quotation string to single quotation
 nmap <Leader>str :%s/[\\]\@<!\(["]\)\(\(\(#{\)\@<![^"]\)\+\)\1/'\2'/gce<CR>
