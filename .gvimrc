@@ -1,25 +1,32 @@
 if has("gui_macvim")
   " Define a font list for MacOS with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
-        \"Monaco:h12",
+        \"Monaco:h18",
         \"Bitstream\\ Vera\\ Sans\\ Mono\\ 11",
         \"DejaVu\\ Sans\\ Mono\\ 11",
         \"Inconsolat1\\ 11",
         \]
 
   let s:WinSizeList = [
-        \[138, 43],
-        \[138, 43],
-        \[138, 43],
-        \[138, 43]
+        \[170, 43],
+        \[170, 43],
+        \[170, 43],
+        \[170, 43]
         \]
 
   let s:WinPosList  = [
-        \[5, 50],
-        \[5, 50],
-        \[5, 50],
-        \[5, 50]
+        \[50, 10],
+        \[50, 10],
+        \[50, 10],
+        \[50, 10]
         \]
+
+  for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    exec printf('map <D-%d> %dgt', i, i)
+    exec printf('imap <D-%d> <Esc>%dgta', i, i)
+  endfor
+  map <D-0> :tablast<CR>
+  imap <D-0> <Esc>:tablast<CR>a
 end
 
 if has("gui_gtk2")
