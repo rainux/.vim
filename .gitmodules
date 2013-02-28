@@ -132,7 +132,7 @@
 	url = git://github.com/godlygeek/tabular.git
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
-	url = git://github.com/bbommarito/vim-slim
+	url = git://github.com/slim-template/vim-slim.git
 [submodule "bundle/po.vim--Jelenak"]
 	path = bundle/po.vim--Jelenak
 	url = http://github.com/vim-scripts/po.vim--Jelenak.git

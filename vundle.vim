@@ -64,7 +64,7 @@ Bundle 'git://github.com/tpope/vim-cucumber.git'
 Bundle 'git://github.com/tpope/vim-haml.git'
 Bundle 'git://github.com/tpope/vim-rails.git'
 Bundle 'git://github.com/tpope/vim-rake.git'
-Bundle 'git://github.com/bbommarito/vim-slim'
+Bundle 'git://github.com/slim-template/vim-slim.git'
 Bundle 'git://github.com/rainux/vim-turbux.git'
 
 BundleBind!
