@@ -602,7 +602,7 @@ let g:netrw_home = expand('~/.vim/tmp')
 
 
 " Powerline
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
 call Pl#Theme#InsertSegment('filesize', 'after', 'filetype')
 call Pl#Theme#InsertSegment(['raw', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'], 'after', 'filesize')
