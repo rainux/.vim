@@ -15,11 +15,7 @@ Run the following commands in your terminal with bash/zsh:
 
     cd
     git clone git://github.com/rainux/.vim.git
-    cd .vim
-    git submodule update --init
-    ln -s .vim/.gvimrc ~
-    ln -s .vim/.vimrc ~
-    vim -Ec "exec 'BundleDocs' | q"
+    .vim/install.sh
 
 Windows
 -------
