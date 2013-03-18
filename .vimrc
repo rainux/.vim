@@ -70,12 +70,15 @@ endfunction
 function! s:ToggleIndentStyle(...)
   if a:0
     if a:1 == 8
-      execute 'setlocal noexpandtab softtabstop=' . a:1 . ' shiftwidth=' . a:1
+      " Do not show ugly tab chars for indent with 8
+      setlocal nolist noexpandtab softtabstop=4 shiftwidth=4 tabstop=4
+      " Only display message when called by F1 key
       if a:0 > 1
         echo 'Indent style changed to noexpandtab'
       endif
     else
       execute 'setlocal expandtab softtabstop=' . a:1 . ' shiftwidth=' . a:1
+      setlocal list tabstop=8
       if a:0 > 1
         echo 'Indent style changed to expandtab with ' . a:1 . ' spaces'
       endif
@@ -151,7 +154,7 @@ if has('autocmd')
           \ setlocal iskeyword+=:,?,! |
 
     let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|lisp\|nsis\|sass\|slim\|taskpaper\|vim\)$'
-    let s:indent8_regex = '^\%(css\|gitconfig\)$'
+    let s:indent8_regex = '^\%(css\|gitconfig\|go\)$'
 
     function! s:BufEnter()
       " Set indent style for diffent file type
