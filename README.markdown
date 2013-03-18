@@ -24,8 +24,4 @@ Run the following commands in cmd.exe:
 
     cd %HOME%
     git clone git://github.com/rainux/.vim.git
-    cd .vim
-    git submodule update --init
-    copy .gvimrc.win "%HOME%\.gvimrc"
-    copy .vimrc.win "%HOME%\.vimrc"
-    vim -Ec "exec 'BundleDocs' | q"
+    .vim\install.cmd
