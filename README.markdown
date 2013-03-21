@@ -15,7 +15,7 @@ Run the following commands in your terminal with bash/zsh:
 
     cd
     git clone git://github.com/rainux/.vim.git
-    .vim/install.sh
+    .vim/install
 
 Windows
 -------
