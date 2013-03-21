@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'git://github.com/rainux/vundle.git'
 Bundle 'git://github.com/kana/vim-textobj-user.git'
 Bundle 'git://github.com/scrooloose/nerdtree.git'
+Bundle 'git://github.com/jistr/vim-nerdtree-tabs.git'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'git://github.com/rainux/Color-Scheme-Test.git'
 Bundle 'git://github.com/rainux/vim-desert-warm-256.git'
