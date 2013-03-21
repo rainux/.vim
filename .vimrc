@@ -176,7 +176,7 @@ if has('autocmd')
     autocmd BufEnter * call s:BufEnter()
 
     " Apply file template if it exists
-    autocmd BufNewFile *
+    autocmd BufNewFile *.*
           \ if &modifiable |
           \   set ff=unix |
           \   let s:Template = expand('~/.template/template.' . substitute(bufname('%'), '.\{-\}\.*\([^.]*\)$', '\1', '')) |
