@@ -1,7 +1,7 @@
 " Rainux's .vimrc file
 "
 " Maintainer: Rainux <rainux@gmail.com>
-" URL:        http://github.com/rainux/vimfiles
+" URL:        http://github.com/rainux/.vim
 
 source ~/.vim/vundle.vim
 
