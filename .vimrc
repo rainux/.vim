@@ -314,8 +314,8 @@ imap <F3> <Esc><F3>a
 " F4 is Toggle Tag List
 map <F4> :TagbarToggle<CR>
 
-" F5 is Toggle Mini Buffer Explorer
-map <F5> :BufExplorer<CR>
+" F5 is Toggle Gundo
+map <F5> :GundoToggle<CR>
 imap <F5> <Esc><F5>
 
 " F6 is Open NERDTree
