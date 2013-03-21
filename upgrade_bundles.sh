@@ -1,20 +1,17 @@
 #!/bin/bash
-for bundle in bundle/*
-do
-    if [[ -d $bundle ]] && [[ $bundle != 'bundle/vundle' ]]
-    then
-        pushd $bundle
 
-        if [[ $bundle == 'bundle/vim-powerline' ]]
-        then
-            branch='develop'
-        else
-            branch='master'
-        fi
-
-        git checkout $branch
-        git pull
-
-        popd
+git submodule foreach <<BASH '
+    if [ "$name" = "bundle/vundle" ]; then
+        continue
     fi
-done
+
+    if [ "$name" = "bundle/vim-powerline" ]; then
+        branch='develop'
+    else
+        branch='master'
+    fi
+
+    git checkout $branch 2> /dev/null
+    git pull
+'
+BASH
