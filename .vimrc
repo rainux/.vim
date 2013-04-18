@@ -318,8 +318,8 @@ map <F4> :TagbarToggle<CR>
 map <F5> :GundoToggle<CR>
 imap <F5> <Esc><F5>
 
-" F6 is Open NERDTree
-map <F6> :NERDTreeToggle<CR>
+" F6 is Toggle NERDTreeTabs
+map <F6> :NERDTreeTabsToggle<CR>
 imap <F6> <Esc><F6>a
 
 " F7 is Toggle spell check
