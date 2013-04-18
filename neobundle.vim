@@ -12,7 +12,7 @@ NeoBundleFetch 'Shougo/neobundle.vim', {'depends': [
       \   'cygwin': 'make -f make_cygwin.mak',
       \   'mac': 'make -f make_mac.mak',
       \   'unix': 'make -f make_unix.mak',
-      \ }}]
+      \    }}]
       \ ]}
 
 " Bundles:
@@ -34,6 +34,11 @@ NeoBundle 'matrix.vim--Yang'
 NeoBundle 'taskpaper.vim'
 NeoBundle 'vim2ansi'
 NeoBundle 'railscasts'
+NeoBundle 'Shougo/neocomplcache', {'depends': [
+      \ ['Shougo/neosnippet', {'depends': [
+      \   'honza/vim-snippets',
+      \ ]}],
+      \ ]}
 
 " Programming:
 NeoBundle 'git://github.com/godlygeek/tabular.git'

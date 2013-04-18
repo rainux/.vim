@@ -184,3 +184,12 @@
 [submodule "bundle/neobundle.vim"]
 	path = bundle/neobundle.vim
 	url = git://github.com/Shougo/neobundle.vim.git
+[submodule "bundle/neosnippet"]
+	path = bundle/neosnippet
+	url = git://github.com/Shougo/neosnippet.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets.git
