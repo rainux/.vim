@@ -1,6 +1,3 @@
-[submodule "bundle/vundle"]
-	path = bundle/vundle
-	url = git://github.com/rainux/vundle.git
 [submodule "bundle/vim-textobj-user"]
 	path = bundle/vim-textobj-user
 	url = git://github.com/kana/vim-textobj-user.git
@@ -178,3 +175,12 @@
 [submodule "bundle/vim-nerdtree-tabs"]
 	path = bundle/vim-nerdtree-tabs
 	url = git://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "bundle/unite.vim"]
+	path = bundle/unite.vim
+	url = git://github.com/Shougo/unite.vim.git
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = git://github.com/Shougo/vimproc.git
+[submodule "bundle/neobundle.vim"]
+	path = bundle/neobundle.vim
+	url = git://github.com/Shougo/neobundle.vim.git
