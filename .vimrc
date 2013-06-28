@@ -439,7 +439,7 @@ nmap ,s :source $HOME/.vimrc<CR>
 nmap ,v :tabe $HOME/.vim/.vimrc<CR>
 
 " ,t ,b is activate Command-T
-function! s:ProjectRoot()
+function! g:ProjectRoot()
   if exists('b:rails_root')
     return b:rails_root
   elseif exists('b:bundler_root')
@@ -451,7 +451,7 @@ function! s:ProjectRoot()
   endif
 endfunction
 
-nmap ,t :execute 'CommandT ' . fnameescape(<SID>ProjectRoot())<CR>
+nmap ,t :execute 'CommandT ' . fnameescape(g:ProjectRoot())<CR>
 nmap ,b :CommandTBuffer<CR>
 
 " ,> ,< is next or prev error
