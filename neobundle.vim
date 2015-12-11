@@ -7,6 +7,8 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+let g:neobundle#install_process_timeout = 1500
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -28,7 +30,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'https://github.com/kana/vim-textobj-user.git'
 NeoBundle 'https://github.com/scrooloose/nerdtree.git'
 NeoBundle 'https://github.com/jistr/vim-nerdtree-tabs.git'
-NeoBundle 'https://git.wincent.com/command-t.git'
+NeoBundle 'https://github.com/wincent/command-t.git'
 NeoBundle 'https://github.com/rainux/Color-Scheme-Test.git'
 NeoBundle 'https://github.com/rainux/vim-desert-warm-256.git'
 NeoBundle 'https://github.com/Lokaltog/vim-easymotion.git'
@@ -67,7 +69,7 @@ NeoBundle 'https://github.com/tpope/vim-repeat.git'
 NeoBundle 'https://github.com/tpope/vim-speeddating.git', {'bind': 0, 'tags': ['date', 'slow']}
 NeoBundle 'https://github.com/tpope/vim-surround.git'
 NeoBundle 'https://github.com/tpope/vim-unimpaired.git'
-NeoBundle 'https://repo.or.cz/vcscommand.git'
+NeoBundle 'vcscommand.vim'
 NeoBundle 'CRefVim'
 NeoBundle 'JavaScript-syntax'
 NeoBundle 'NSIS-syntax-highlighting'
