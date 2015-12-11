@@ -2,7 +2,7 @@
 
 cd `dirname $0` > /dev/null
 
-echo 'Installing plugin bundles...'
+echo 'Installing NeoBundle via submodule...'
 git submodule update --init
 
 for file in .gvimrc .vimrc
@@ -15,5 +15,8 @@ do
     ln -sf "$PWD/$file" ~
 done
 
+echo 'Install plugin bundles...'
+vim -Ec "exec 'NeoBundleInstall' | q"
+
 echo 'Generating help tags for plugin bundles...'
-vim -Ec "exec 'BundleDocs' | q"
+vim -Ec "exec 'NeoBundleDocs' | q"

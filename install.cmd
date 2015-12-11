@@ -2,7 +2,7 @@
 
 CD %~dp0
 
-echo Installing plugin bundles...
+echo Installing NeoBundle via submodule...
 git submodule update --init
 
 FOR %%I in (.gvimrc .vimrc) DO (
@@ -14,5 +14,8 @@ FOR %%I in (.gvimrc .vimrc) DO (
     COPY "%%~fI.win" %HOME%\%%I > NUL
 )
 
+ECHO Install plugin bundles...
+vim -Ec "exec 'NeoBundleInstall' | q"
+
 ECHO Generating help tags for plugin bundles...
-vim -Ec "exec 'BundleDocs' | q"
+vim -Ec "exec 'NeoBundleDocs' | q"
