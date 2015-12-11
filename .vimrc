@@ -72,7 +72,7 @@ function! s:ToggleIndentStyle(...)
     if a:1 == 8
       " Do not show ugly tab chars for indent with 8
       setlocal nolist noexpandtab softtabstop=4 shiftwidth=4 tabstop=4
-      " Only display message when called by F1 key
+      " Only display message when called by ,i
       if a:0 > 1
         echo 'Indent style changed to noexpandtab'
       endif
@@ -153,7 +153,7 @@ if has('autocmd')
           \ setlocal tags+=~/.gem/tags |
           \ setlocal iskeyword+=:,?,! |
 
-    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|lisp\|nsis\|sass\|slim\|vim\)$'
+    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|lisp\|nsis\|sass\|slim\|vim\|puppet\)$'
     let s:indent8_regex = '^\%(css\|gitconfig\|go\|taskpaper\)$'
 
     function! s:BufEnter()
@@ -210,6 +210,7 @@ endif
 set autoindent
 set background=dark
 set backspace=indent,eol,start
+set colorcolumn=120
 set completeopt=menuone,longest,preview
 set directory=~/.vim/tmp,/var/tmp,/tmp
 set fileformats=unix,dos
@@ -236,6 +237,7 @@ set showbreak=>>
 set shellslash
 set showcmd
 set smartindent
+set ttimeoutlen=50
 if v:version >= 703
   set undodir=~/.vim/undodir
   set undofile
@@ -289,13 +291,11 @@ map <Down> gj
 imap <Up> <Esc><Up>a
 imap <Down> <Esc><Down>a
 
-" F1 is toggle indent style smartly
-map <F1> :call <SID>ToggleIndentStyle()<CR>
-imap <F1> :call <Esc><F1>a
+" ,i is toggle indent style smartly
+map ,i :call <SID>ToggleIndentStyle()<CR>
 
-" F2 is Toggle iskeyword contain or not contain '_'
-map <F2> :call <SID>ToggleIsKeyword('_')<CR>
-imap <F2> <Esc><F2>a
+" ,k is Toggle iskeyword contain or not contain '_'
+map ,k :call <SID>ToggleIsKeyword('_')<CR>
 
 function! s:ToggleIsKeyword(char)
   if stridx(&iskeyword, a:char) < 0
@@ -307,31 +307,29 @@ function! s:ToggleIsKeyword(char)
   endif
 endfunction
 
-" F3 is Reverse hlsearch
-map <F3> :set hlsearch!<CR>
-imap <F3> <Esc><F3>a
+" ,hs is Reverse hlsearch
+map ,hs :set hlsearch!<CR>
 
-" F4 is Toggle Tag List
-map <F4> :TagbarToggle<CR>
+" ,tl is Toggle Tag List
+map ,tl :TagbarToggle<CR>
 
-" F5 is Toggle Gundo
-map <F5> :GundoToggle<CR>
-imap <F5> <Esc><F5>
+" ,u is Toggle Gundo
+map ,u :GundoToggle<CR>
 
-" F6 is Toggle NERDTreeTabs
-map <F6> :NERDTreeTabsToggle<CR>
-imap <F6> <Esc><F6>a
+" ,nt is Toggle NERDTreeTabs
+map ,nt :NERDTreeTabsToggle<CR>
 
-" F7 is Toggle spell check
-map <F7> :set spell!<CR>
-imap <F7> <Esc><F7>a
+" ,nf is call NERDTreeFind
+map ,nf :NERDTreeFind<CR>
 
-" F8 is Change GUI font
+" ,p is Toggle spell check
+map ,p :set spell!<CR>
+
+" ,fo is Change GUI font
 " Code moved to .gvimrc
 
-" F9 is Compile and Run
-map <F9> :call <SID>Run()<CR>
-imap <F9> <Esc><F9>a
+" ,r is Compile and Run
+map ,r :call <SID>Run()<CR>
 
 function! s:Run()
   if exists('b:current_compiler')
@@ -355,12 +353,11 @@ function! s:Run()
   endif
 endfunction
 
-" F11 is Toggle wrap
+" ,w is Toggle wrap
 " Code moved to .gvimrc
 
-" CTRL-F9 is Compile
-map <C-F9> :call <SID>Compile()<CR>
-imap <C-F9> <Esc><C-F9>a
+" ,co is Compile
+map ,co :call <SID>Compile()<CR>
 
 function! s:Compile()
   if exists('b:current_compiler')
@@ -396,6 +393,9 @@ endfor
 " ,* is Substitute(Replace)
 nmap ,* :%s/<C-R><C-W>/
 
+" ,ag is Search in files via ag
+nmap ,ag :execute 'Ag! ' . input("Ag search for pattern: ", "<C-R><C-W>") . ' ' . g:ProjectRoot()<CR>
+
 " ,vi is :BundleInstall
 nmap ,vi :BundleInstall<CR>
 
@@ -426,7 +426,7 @@ nmap ,fc :set ff=unix<CR>:%!fromdos<CR>:%s/\s\+$//ge<CR>
 nmap ,gac :Gcommit --amend<CR>
 nmap ,gb  :Gblame<CR>
 nmap ,gc  :Gcommit<CR>
-nmap ,gd  :Gdiff<CR>
+nmap ,gd  :Gvdiff<CR>
 nmap ,ge  :Gedit<CR>
 nmap ,gg  :Ggrep<Space>
 nmap ,gq  :Git checkout HEAD %<CR>
@@ -438,7 +438,7 @@ nmap ,gw  :Gwrite<CR>
 nmap ,s :source $HOME/.vimrc<CR>
 nmap ,v :tabe $HOME/.vim/.vimrc<CR>
 
-" ,t ,b is activate Command-T
+" ,tt ,tb is activate Command-T
 function! g:ProjectRoot()
   if exists('b:rails_root')
     return b:rails_root
@@ -451,8 +451,8 @@ function! g:ProjectRoot()
   endif
 endfunction
 
-nmap ,t :execute 'CommandT ' . fnameescape(g:ProjectRoot())<CR>
-nmap ,b :CommandTBuffer<CR>
+nmap ,tt :execute 'CommandT ' . fnameescape(g:ProjectRoot())<CR>
+nmap ,tb :CommandTBuffer<CR>
 
 " ,> ,< is next or prev error
 nmap ,> :cnext<CR>
@@ -472,8 +472,8 @@ function! s:InsertDate(Also_Time)
 endfunction
 
 " \hash Convert hash to Ruby 1.9's JSON-like style
-nmap <Leader>hash :%s/\<:\(\w\+\) *=> */\1: /gce<CR>
-vmap <Leader>hash :s/\<:\(\w\+\) *=> */\1: /gce<CR>
+nmap <Leader>hash :%s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
+vmap <Leader>hash :s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
 
 " \ftu \ftg Convert to UTF-8, Convert to GBK
 nmap <Leader>ftu   :set fenc=utf8<CR>:w<CR>
@@ -604,10 +604,59 @@ let maplocalleader = ','
 let g:netrw_home = expand('~/.vim/tmp')
 
 
-" Powerline
-call Pl#Theme#InsertSegment('charcode', 'before', 'fileformat')
-call Pl#Theme#InsertSegment('filesize', 'after', 'filetype')
-call Pl#Theme#InsertSegment(['raw', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'], 'after', 'filesize')
+" airline
+let g:airline#extensions#default#section_truncate_width = {
+  \ 'y': 120
+  \ }
+call airline#parts#define_function('filesize', 'GetFileSize')
+call airline#parts#define_function('charcode', 'GetCharCode')
+function! GetFileSize() " {{{
+	let bytes = getfsize(expand("%:p"))
+
+	if bytes <= 0
+		return ''
+	endif
+
+	if bytes < 1024
+		return bytes . 'B'
+	else
+		return (bytes / 1024) . 'kB'
+	endif
+endfunction "}}}
+function! GetCharCode() " {{{
+	" Get the output of :ascii
+	redir => ascii
+	silent! ascii
+	redir END
+
+	if match(ascii, 'NUL') != -1
+		return 'NUL'
+	endif
+
+	" Zero pad hex values
+	let nrformat = '0x%02x'
+
+	let encoding = (&fenc == '' ? &enc : &fenc)
+
+	if encoding == 'utf-8'
+		" Zero pad with 4 zeroes in unicode files
+		let nrformat = '0x%04x'
+	endif
+
+	" Get the character and the numeric value from the return value of :ascii
+	" This matches the two first pieces of the return value, e.g.
+	" "<F>  70" => char: 'F', nr: '70'
+	let [str, char, nr; rest] = matchlist(ascii, '\v\<(.{-1,})\>\s*([0-9]+)')
+
+	" Format the numeric value
+	let nr = printf(nrformat, nr)
+
+	return "'". char ."' ". nr
+endfunction "}}}
+function! AirlineInit()
+  let g:airline_section_y = airline#section#create(['charcode', ' | ', 'filesize', ' | ', 'ffenc', ' | ', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'])
+endfunction
+autocmd VimEnter * call AirlineInit()
 
 
 " neocomplcache
@@ -664,5 +713,74 @@ endif
 
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
+let g:rails_projections = {
+      \ 'app/uploaders/*_uploader.rb': {
+      \   'command': 'uploader',
+      \   'template':
+      \     'class %SUploader < CarrierWave::Uploader::Base\nend',
+      \   'test': [
+      \     'test/unit/%s_uploader_test.rb',
+      \     'spec/models/%s_uploader_spec.rb'
+      \   ],
+      \   'keywords': 'process version'
+      \ },
+      \ 'app/workers/*_worker.rb': {'command': 'worker'},
+      \ 'features/support/*.rb': {'command': 'support'},
+      \ 'features/support/env.rb': {'command': 'support'},
+      \ 'spec/factories/*.rb': {'command': 'factory'}
+      \ }
+
+
+" Rnavcommand decorator app/decorators      -glob=**/*  -suffix=_decorator.rb
+" Rnavcommand presenter app/presenters      -glob=**/*  -suffix=_presenter.rb
+" Rnavcommand coffee    app/coffeescripts   -glob=**/*  -suffix=.coffee
+" Rnavcommand sass      app/stylesheets     -glob=**/*  -suffix=.sass
+" Rnavcommand scss      app/stylesheets     -glob=**/*  -suffix=.scss
+" Rnavcommand factory   spec/factories      -glob=*     -default=controller()
+
+" Rnavcommand feature     features                  -glob=**/*    -suffix=.feature
+" Rnavcommand steps       features/step_definitions -glob=**/*    -suffix=_steps.rb
+" Rnavcommand support     features/support          -glob=*
+" Rnavcommand specsupport spec/support              -glob=**/*
+
+
+" vim-turbux
+let g:turbux_command_prefix = 'spring'
+
+
+" vim-go
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>tg <Plug>(go-test)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+
+" vim go syntax
+let g:go_highlight_trailing_whitespace_error = 0
+
+
+let g:markdown_fenced_languages = ['html', 'css', 'ruby', 'erb=eruby', 'python', 'bash=sh', 'yaml']
+
+
+" TODO: Re-oganize mappings to keymap.vim and keep them sorted
+
+" "" is List contents of all registers (that typically contain pasteable text).
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
 " vim: set sts=2 sw=2:

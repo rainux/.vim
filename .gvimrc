@@ -1,7 +1,7 @@
 if has("gui_macvim")
   " Define a font list for MacOS with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
-        \"Monaco:h18",
+        \"Monaco:h17",
         \"Bitstream\\ Vera\\ Sans\\ Mono\\ 11",
         \"DejaVu\\ Sans\\ Mono\\ 11",
         \"Inconsolat1\\ 11",
@@ -154,9 +154,8 @@ endif
 " ----------------------------------------------------------------------------
 " Key mappings
 "
-" F8 is Change GUI font
-map <F8> :call <SID>ChangeGuiFont(0)<CR>
-imap <F8> <Esc><F8>a
+" ,fo is Change GUI font
+map ,fo :call <SID>ChangeGuiFont(0)<CR>
 
 function! s:ChangeGuiFont(Inverse)
   let OldIndex = g:CUR_FONT_INDEX
@@ -186,9 +185,8 @@ function! s:ChangeGuiFont(Inverse)
   endif
 endfunction
 
-" F11 is Toggle wrap
-map <F11> :call <SID>ToggleGuiOption("b")<CR>:set wrap!<CR>
-imap <F11> <Esc><F11>a
+" ,w is Toggle wrap
+map ,w :call <SID>ToggleGuiOption("b")<CR>:set wrap!<CR>
 
 function! s:ToggleGuiOption(option)
   " If a:option is already set in guioptions, then we want to remove it
