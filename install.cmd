@@ -17,3 +17,6 @@ FOR %%I in (.gvimrc .vimrc) DO (
 ECHO Install plugin bundles...
 vim -u neobundle.vim -Ec "exec 'NeoBundleInstall vimproc' | q"
 vim -u neobundle.vim -Ec "exec 'NeoBundleInstall' | q"
+
+ECHO Generating help tags...
+vim -Ec "exec 'helptags doc' | q"
