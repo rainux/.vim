@@ -153,14 +153,17 @@ if has('autocmd')
           \ setlocal tags+=~/.gem/tags |
           \ setlocal iskeyword+=:,?,! |
 
-    let s:indent2_regex = '^\%(cucumber\|e\=ruby\|[yh]aml\|delphi\|x\=html\|javascript\|coffee\|lisp\|nsis\|sass\|slim\|vim\|puppet\)$'
-    let s:indent8_regex = '^\%(css\|gitconfig\|go\|taskpaper\)$'
+    let s:indent2_types = [
+          \ 'cucumber', 'eruby', 'ruby', 'yaml', 'slim', 'haml', 'sass', 'delphi', 'html', 'xhtml',
+          \ 'javascript', 'javascript.jsx', 'json', 'coffee', 'lisp', 'nsis', 'vim', 'puppet'
+          \ ]
+    let s:indent8_types = ['css', 'gitconfig', 'go', 'taskpaper']
 
     function! s:BufEnter()
       " Set indent style for diffent file type
-      if &ft =~ s:indent2_regex
+      if index(s:indent2_types, &ft) >= 0
         call s:ToggleIndentStyle(2)
-      elseif &ft =~ s:indent8_regex
+      elseif index(s:indent8_types, &ft) >= 0
         call s:ToggleIndentStyle(8)
       else
         call s:ToggleIndentStyle(4)
@@ -320,7 +323,7 @@ map ,u :GundoToggle<CR>
 map ,nt :NERDTreeTabsToggle<CR>
 
 " ,nf is call NERDTreeFind
-map ,nf :NERDTreeFind<CR>
+map ,nf :NERDTreeTabsFind<CR>
 
 " ,p is Toggle spell check
 map ,p :set spell!<CR>
@@ -458,9 +461,8 @@ nmap ,tb :CommandTBuffer<CR>
 nmap ,> :cnext<CR>
 nmap ,< :cNext<CR>
 
-" \idate \itime Insert current date & time
-nmap <Leader>idate :call <SID>InsertDate(0)<CR>
-nmap <Leader>itime :call <SID>InsertDate(1)<CR>
+" "" is List contents of all registers (that typically contain pasteable text).
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
 function! s:InsertDate(Also_Time)
   let Fmt = '%x'
@@ -659,61 +661,108 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 
 
-" neocomplcache
+" neocomplete
 "
-" Launches neocomplcache automatically on vim startup.
-let g:neocomplcache_enable_at_startup = 1
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underscore completion.
-let g:neocomplcache_enable_underbar_completion = 1
-" Sets minimum char length of syntax keyword.
-let g:neocomplcache_min_syntax_length = 3
-" buffer file name pattern that locks neocomplcache. e.g. ku.vim or fuzzyfinder
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-" Define file-type dependent dictionaries.
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default': '',
-    \ 'vimshell': $HOME.'/.vimshell_hist',
-    \ 'scheme': $HOME.'/.gosh_completions'
-    \ }
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+        \ }
 
-" Define keyword, for minor languages
-if !exists('g:neocomplcache_keyword_patterns')
-  let g:neocomplcache_keyword_patterns = {}
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-" inoremap <expr><CR>   neocomplcache#smart_close_popup()."\<CR>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
 " neosnippet
+" Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For snippet_complete marker.
+" For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=i
+  set conceallevel=2 concealcursor=niv
 endif
 
 let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 
+
+" vim-rails
 let g:rails_projections = {
+      \ 'app/admin/*.rb': {'command': 'admin'},
+      \ 'app/decorators/*_decorator.rb': {'command': 'decorator'},
+      \ 'app/inputs/*_input.rb': {'command': 'input'},
+      \ 'app/services/*_service.rb': {'command': 'service'},
       \ 'app/uploaders/*_uploader.rb': {
       \   'command': 'uploader',
       \   'template':
@@ -749,17 +798,22 @@ let g:turbux_command_prefix = 'spring'
 
 
 " vim-go
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_trailing_whitespace_error = 0
 let g:go_fmt_command = "goimports"
+let g:go_auto_sameids = 1
 
-au FileType go nmap <Leader>r <Plug>(go-run)
-au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap ,r <Plug>(go-run)
+au FileType go nmap ,b <Plug>(go-build)
 au FileType go nmap <Leader>tg <Plug>(go-test)
-au FileType go nmap <Leader>c <Plug>(go-coverage)
+au FileType go nmap ,ct <Plug>(go-coverage-toggle)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>dt <Plug>(go-def-tab)
@@ -769,18 +823,34 @@ au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
+au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 
-" vim go syntax
-let g:go_highlight_trailing_whitespace_error = 0
-
-
+" vim-markdown
 let g:markdown_fenced_languages = ['html', 'css', 'ruby', 'erb=eruby', 'python', 'bash=sh', 'yaml']
 
 
-" TODO: Re-oganize mappings to keymap.vim and keep them sorted
+" NERDTree
+let g:nerdtree_tabs_open_on_gui_startup = 0
 
-" "" is List contents of all registers (that typically contain pasteable text).
-nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
+
+" vim-jsx
+let g:jsx_ext_required = 0
+
+
+" Syntastic
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_auto_loc_list = 0 " For vim-go work properly
+
+
+" rust.vim
+let g:rustfmt_autosave = 1
+
+
+" vim-table-model
+let g:table_mode_corner='|'
 
 " vim: set sts=2 sw=2:
