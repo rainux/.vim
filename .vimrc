@@ -105,7 +105,7 @@ endfunction
 function! s:VimInit()
   set nocompatible
   call s:MultiEncodingSetting()
-  source $VIMRUNTIME/mswin.vim
+  source ~/.vim/mswin.vim
   behave xterm
   " Restore CTRL-A to increase number instead of Select All
   unmap <C-A>
