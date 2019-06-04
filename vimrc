@@ -245,7 +245,7 @@ if v:version >= 703
   set undodir=~/.vim/undodir
   set undofile
 endif
-set viminfo=!,'1000,<100,c,f1,h,s10
+set viminfo=!,'1000,<100,c,f1,h,s10,n~/.viminfo
 set virtualedit=block
 set visualbell
 set wildmenu
@@ -275,6 +275,12 @@ function! MyFoldText()
   let foldtext = substitute(foldtext(), '\s\+\d\+\s\+lines:\s\+', ' ', 'g')
   return foldtext
 endfunction
+
+" Force read viminfo to ensure font settings get loaded on Windows
+try
+  rviminfo ~/.viminfo
+catch
+endtry
 
 color desert-warm-256
 
