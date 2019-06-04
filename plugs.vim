@@ -81,7 +81,7 @@ Plug 'vim-scripts/jQuery'
 " PlugLazy 'lua-support'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/std_c.zip'
-Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'vim-scripts/po.vim--Jelenak'
 " Plug 'kballard/vim-swift', {
         " \ 'filetypes': 'swift',

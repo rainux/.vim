@@ -847,4 +847,8 @@ let g:rustfmt_autosave = 1
 " vim-table-model
 let g:table_mode_corner='|'
 
+
+" UltiSnips
+let g:UltiSnipsNoPythonWarning = 1
+
 " vim: set sts=2 sw=2:
