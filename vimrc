@@ -3,7 +3,7 @@
 " Maintainer: Rainux <rainux@gmail.com>
 " URL:        http://github.com/rainux/.vim
 
-source ~/.vim/neobundle.vim
+source ~/.vim/plugs.vim
 
 " Multi-encoding setting
 function! s:MultiEncodingSetting()
