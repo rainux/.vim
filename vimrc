@@ -245,7 +245,11 @@ if v:version >= 703
   set undodir=~/.vim/undodir
   set undofile
 endif
-set viminfo=!,'1000,<100,c,f1,h,s10,n~/.viminfo
+if has('nvim')
+  set viminfo=!,'1000,<100,c,f1,h,s10
+else
+  set viminfo=!,'1000,<100,c,f1,h,s10,n~/.viminfo
+end
 set virtualedit=block
 set visualbell
 set wildmenu
@@ -260,10 +264,12 @@ function! MyFoldText()
 endfunction
 
 " Force read viminfo to ensure font settings get loaded on Windows
-try
-  rviminfo ~/.viminfo
-catch
-endtry
+if !has('nvim')
+  try
+    rviminfo ~/.viminfo
+  catch
+  endtry
+end
 
 color desert-warm-256
 
