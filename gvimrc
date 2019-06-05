@@ -57,12 +57,8 @@ if has("gui_win32")
   " Define a font list for Win32 with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
         \"Monaco:h10",
-        \"SimSun:h11",
-        \"Courier_New:h12",
-        \"Bitstream_Vera_Sans_Mono:h11",
-        \"Fixedsys:h11",
-        \"Lucida_Console:h11",
-        \"Terminal:h12:cGB2312"
+        \"Lucida_Console:h14",
+        \"Consolas:h14"
         \]
 
   let s:WinSizeList = [
