@@ -155,7 +155,7 @@ if has('autocmd')
 
     let s:indent2_types = [
           \ 'cucumber', 'eruby', 'ruby', 'yaml', 'slim', 'haml', 'sass', 'delphi', 'html', 'xhtml',
-          \ 'javascript', 'javascript.jsx', 'json', 'coffee', 'lisp', 'nsis', 'vim', 'puppet'
+          \ 'javascript', 'javascript.jsx', 'json', 'coffee', 'lisp', 'nsis', 'vim', 'puppet', 'scala'
           \ ]
     let s:indent8_types = ['css', 'gitconfig', 'go', 'taskpaper']
 
@@ -255,7 +255,7 @@ set visualbell
 set wildmenu
 set wildmode=list:longest,full
 
-set diffopt=filler,iwhite
+set diffopt=filler,iwhite,vertical
 
 set foldtext=MyFoldText()
 function! MyFoldText()
@@ -819,7 +819,9 @@ au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 
 " vim-markdown
-let g:markdown_fenced_languages = ['html', 'css', 'ruby', 'erb=eruby', 'python', 'bash=sh', 'yaml']
+let g:vim_markdown_fenced_languages = ['html', 'css', 'ruby', 'erb=eruby', 'python', 'bash=sh', 'yaml']
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_toc_autofit = 1
 
 
 " NERDTree

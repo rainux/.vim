@@ -36,3 +36,5 @@ au BufNewFile,BufRead *.txt setf text
 
 " ActionScript
 au BufNewFile,BufRead *.as setf actionscript
+
+au filetype crontab setlocal nobackup nowritebackup
