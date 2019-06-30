@@ -447,8 +447,8 @@ nmap ,tt :execute 'CommandT ' . fnameescape(g:ProjectRoot())<CR>
 nmap ,tb :CommandTBuffer<CR>
 
 " ,> ,< is next or prev error
-nmap ,> :cnext<CR>
-nmap ,< :cNext<CR>
+nmap ,> :lnext<CR>
+nmap ,< :lNext<CR>
 
 " "" is List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
@@ -788,7 +788,6 @@ let g:turbux_command_prefix = 'spring'
 
 " vim-go
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -834,7 +833,10 @@ let g:jsx_ext_required = 0
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_auto_loc_list = 0 " For vim-go work properly
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 " rust.vim
