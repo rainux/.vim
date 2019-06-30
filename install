@@ -1,9 +1,4 @@
-#!/bin/bash
-
-cd `dirname $0` > /dev/null
-
-echo 'Installing NeoBundle via submodule...'
-git submodule update --init
+#!/bin/sh
 
 for file in .gvimrc .vimrc
 do
@@ -11,13 +6,7 @@ do
         echo "Backing up $HOME/$file -> $HOME/$file.original"
         cp "$HOME/$file" "$HOME/$file.original"
     fi
-    echo "Symbolic linking $HOME/$file -> $PWD/$file"
-    ln -sf "$PWD/$file" ~
 done
 
-echo 'Install plugin bundles...'
-vim -u neobundle.vim -Ec "exec 'NeoBundleInstall vimproc' | q"
-vim -u neobundle.vim -Ec "exec 'NeoBundleInstall' | q"
-
-echo 'Generating help tags...'
-vim -Ec "exec 'helptags doc' | q"
+echo 'Install plugins...'
+vim -Ec "exec 'PlugInstall' | qa"
