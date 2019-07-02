@@ -314,8 +314,8 @@ map ,nt :NERDTreeTabsToggle<CR>
 " ,nf is call NERDTreeFind
 map ,nf :NERDTreeTabsFind<CR>
 
-" ,p is Toggle spell check
-map ,p :set spell!<CR>
+" ,sp is Toggle spell check
+map ,sp :set spell!<CR>
 
 " ,fo is Change GUI font
 " Code moved to .gvimrc
@@ -388,12 +388,6 @@ nmap ,* :%s/<C-R><C-W>/
 " ,ag is Search in files via ag
 nmap ,ag :execute 'Ag! ' . input("Ag search for pattern: ", "<C-R><C-W>") . ' ' . g:ProjectRoot()<CR>
 
-" ,vi is :BundleInstall
-nmap ,vi :BundleInstall<CR>
-
-" ,vs is :BundleSearch
-nmap ,vs :BundleSearch<Space>
-
 " NERD commenter mappings
 nmap ,cc        <Plug>NERDCommenterComment
 vmap ,cc        <Plug>NERDCommenterComment
@@ -427,8 +421,12 @@ nmap ,gs  :Gstatus<CR>
 nmap ,gw  :Gwrite<CR>
 
 " Make it easy to update/reload .vimrc
-nmap ,s :source $HOME/.vimrc<CR>
-nmap ,v :tabe $HOME/.vim/.vimrc<CR>
+nmap ,vs :source $HOME/.vim/vimrc<CR>:source $HOME/.vim/gvimrc<CR>
+nmap ,vev :tabe $HOME/.vim/vimrc<CR>
+nmap ,vep :tabe $HOME/.vim/plugs.vim<CR>
+
+" ,pi is :PlugInstall
+nmap ,pi :source $HOME/.vim/plugs.vim<CR>:PlugInstall<CR>
 
 " ,tt ,tb is activate Command-T
 function! g:ProjectRoot()
