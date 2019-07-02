@@ -7,7 +7,13 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
 
-" Bundles:
+" Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+
+" ===========================================================
+" Bellow are historical plugs that need to be tidied manually
+
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
@@ -34,8 +40,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 Plug 'vim-scripts/taskpaper.vim'
 Plug 'vim-scripts/vim2ansi'
 Plug 'vim-scripts/railscasts'
-Plug 'Shougo/neocomplete'
-Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
