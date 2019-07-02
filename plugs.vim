@@ -13,6 +13,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Better fold markers
 Plug 'dbmrq/vim-chalk'
 
+" Lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline'
+
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually
 
@@ -33,7 +36,6 @@ Plug 'https://github.com/rainux/Color-Scheme-Test.git'
 Plug 'https://github.com/rainux/vim-desert-warm-256.git'
 Plug 'https://github.com/Lokaltog/vim-easymotion.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
-Plug 'bling/vim-airline'
 Plug 'https://github.com/sjl/gundo.vim.git'
 Plug 'rking/ag.vim'
 " PlugLazy 'DrawIt'

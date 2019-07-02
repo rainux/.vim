@@ -252,59 +252,65 @@ let maplocalleader = ','
 let g:netrw_home = expand('~/.vim/tmp')
 
 
-" airline
+" airline  .............................................................. {{{1
 let g:airline#extensions#default#section_truncate_width = {
   \ 'y': 120
   \ }
+
 call airline#parts#define_function('filesize', 'GetFileSize')
 call airline#parts#define_function('charcode', 'GetCharCode')
-function! GetFileSize() " {{{
-	let bytes = getfsize(expand("%:p"))
 
-	if bytes <= 0
-		return ''
-	endif
+function! GetFileSize() " {{{2
+  let bytes = getfsize(expand("%:p"))
 
-	if bytes < 1024
-		return bytes . 'B'
-	else
-		return (bytes / 1024) . 'kB'
-	endif
-endfunction "}}}
-function! GetCharCode() " {{{
-	" Get the output of :ascii
-	redir => ascii
-	silent! ascii
-	redir END
+  if bytes <= 0
+    return ''
+  endif
 
-	if match(ascii, 'NUL') != -1
-		return 'NUL'
-	endif
+  if bytes < 1024
+    return bytes . 'B'
+  else
+    return (bytes / 1024) . 'kB'
+  endif
+endfunction "}}}2
 
-	" Zero pad hex values
-	let nrformat = '0x%02x'
+function! GetCharCode() " {{{2
+  " Get the output of :ascii
+  redir => ascii
+  silent! ascii
+  redir END
 
-	let encoding = (&fenc == '' ? &enc : &fenc)
+  if match(ascii, 'NUL') != -1
+    return 'NUL'
+  endif
 
-	if encoding == 'utf-8'
-		" Zero pad with 4 zeroes in unicode files
-		let nrformat = '0x%04x'
-	endif
+  " Zero pad hex values
+  let nrformat = '0x%02x'
 
-	" Get the character and the numeric value from the return value of :ascii
-	" This matches the two first pieces of the return value, e.g.
-	" "<F>  70" => char: 'F', nr: '70'
-	let [str, char, nr; rest] = matchlist(ascii, '\v\<(.{-1,})\>\s*([0-9]+)')
+  let encoding = (&fenc == '' ? &enc : &fenc)
 
-	" Format the numeric value
-	let nr = printf(nrformat, nr)
+  if encoding == 'utf-8'
+    " Zero pad with 4 zeroes in unicode files
+    let nrformat = '0x%04x'
+  endif
 
-	return "'". char ."' ". nr
-endfunction "}}}
+  " Get the character and the numeric value from the return value of :ascii
+  " This matches the two first pieces of the return value, e.g.
+  " "<F>  70" => char: 'F', nr: '70'
+  let [str, char, nr; rest] = matchlist(ascii, '\v\<(.{-1,})\>\s*([0-9]+)')
+
+  " Format the numeric value
+  let nr = printf(nrformat, nr)
+
+  return "'". char ."' ". nr
+endfunction "}}}2
+
 function! AirlineInit()
   let g:airline_section_y = airline#section#create(['charcode', ' | ', 'filesize', ' | ', 'ffenc', ' | ', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'])
 endfunction
+
 autocmd VimEnter * call AirlineInit()
+" ....................................................................... }}}1
 
 
 " vim-rails
