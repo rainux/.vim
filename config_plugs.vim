@@ -3,6 +3,16 @@
 "
 
 " coc.nvim  ............................................................. {{{1
+
+let g:coc_global_extensions = [
+      \ 'coc-git',
+      \ 'coc-json',
+      \ 'coc-rls',
+      \ 'coc-snippets',
+      \ 'coc-solargraph',
+      \ ]
+
+" Coc Core  ............................................................. {{{2
 "
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -43,9 +53,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[c` and `]c` to navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
+" Use `[d` and `]d` to navigate diagnostics
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -104,22 +114,10 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+" ....................................................................... }}}2
 
-" Add diagnostic info for https://github.com/itchyny/lightline.vim
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'cocstatus': 'coc#status'
-      \ },
-      \ }
-
-autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
-
-" Using CocList
+" Using CocList  ........................................................ {{{2
+"
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 " Manage extensions
@@ -136,6 +134,61 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" ....................................................................... }}}2
+
+" coc-git  .............................................................. {{{2
+"
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" show chunk diff at current position
+nmap gci <Plug>(coc-git-chunkinfo)
+" show commit contains current position
+nmap gsc <Plug>(coc-git-commit)
+" Stage current chunk
+nmap gcs :CocCommand git.chunkStage<CR>
+" Undo current chunk
+nmap gcu :CocCommand git.chunkUndo<CR>
+" Show cached diff in preview window.
+nmap gdc :CocCommand git.diffCached<CR>
+" Fold unchanged lines of current buffer.
+nmap gfu :CocCommand git.foldUnchanged<CR>
+" ....................................................................... }}}2
+
+" coc-snippets  ......................................................... {{{2
+"
+" Show snippets
+nnoremap <silent> <space>n  :<C-u>CocList snippets<cr>
+
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+
+" Make <tab> used for trigger completion, completion confirm, snippet expand and jump like VSCode.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+" ....................................................................... }}}2
 " ....................................................................... }}}1
 
 

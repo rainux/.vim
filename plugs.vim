@@ -9,6 +9,7 @@ Plug 'junegunn/vim-plug'
 
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets'
 
 " Better fold markers
 Plug 'dbmrq/vim-chalk'
@@ -46,10 +47,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 Plug 'vim-scripts/taskpaper.vim'
 Plug 'vim-scripts/vim2ansi'
 Plug 'vim-scripts/railscasts'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
-" Disabled due to conflict with coc.nvim
-" Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
