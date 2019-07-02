@@ -175,15 +175,6 @@ nmap ,< :lNext<CR>
 " "" is List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
 
-function! s:InsertDate(Also_Time)
-  let Fmt = '%x'
-  if a:Also_Time
-    let Fmt .= ' %X'
-  endif
-  let Time = strftime(Fmt)
-  execute 'normal a' . Time
-endfunction
-
 " \hash Convert hash to Ruby 1.9's JSON-like style
 nmap <Leader>hash :%s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
 vmap <Leader>hash :s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
