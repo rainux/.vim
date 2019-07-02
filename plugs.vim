@@ -10,6 +10,8 @@ Plug 'junegunn/vim-plug'
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Better fold markers
+Plug 'dbmrq/vim-chalk'
 
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually

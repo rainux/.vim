@@ -2,7 +2,7 @@
 " Configurations for plugins
 "
 
-" coc.nvim
+" coc.nvim  ............................................................. {{{1
 "
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -41,7 +41,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
@@ -136,7 +136,31 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" ....................................................................... }}}1
 
+
+" vim-chalk  ............................................................ {{{1
+let g:chalk_char = "."
+let g:chalk_edit = 0
+
+" Files for which to add a space between the marker and the current text
+au BufRead,BufNewFile *.vim let b:chalk_space_before = 1
+
+
+vmap zf <Plug>Chalk          " Create fold at visual selection
+nmap zf <Plug>Chalk          " Create fold at operator movement
+nmap zF <Plug>ChalkRange     " Create fold for specified number of lines
+
+nmap Zf <Plug>SingleChalk    " Create single (opening) fold marker
+                             " at current level or specified count
+nmap ZF <Plug>SingleChalkUp  " Create single (opening) fold marker
+                             "  at next levelor specified count
+
+nmap =z <Plug>ChalkUp        " Increment current fold level
+nmap -z <Plug>ChalkDown      " Decrement current fold level
+vmap =z <Plug>ChalkUp        " Increment levels in selection
+vmap -z <Plug>ChalkDown      " Decrement levels in selection
+" ....................................................................... }}}1
 
 " std_c
 let c_syntax_for_h = 1
@@ -386,3 +410,5 @@ let g:table_mode_corner='|'
 
 " UltiSnips
 let g:UltiSnipsNoPythonWarning = 1
+
+" vim: set fdm=marker:
