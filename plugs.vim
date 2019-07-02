@@ -16,6 +16,10 @@ Plug 'dbmrq/vim-chalk'
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
 
+" Scheme
+Plug 'rainux/Color-Scheme-Test'
+Plug 'rainux/vim-desert-warm-256'
+
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually
 
@@ -32,8 +36,6 @@ Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
       " \     'unix' : 'rake make',
       " \    },
       " \ }
-Plug 'https://github.com/rainux/Color-Scheme-Test.git'
-Plug 'https://github.com/rainux/vim-desert-warm-256.git'
 Plug 'https://github.com/Lokaltog/vim-easymotion.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
@@ -46,7 +48,8 @@ Plug 'vim-scripts/vim2ansi'
 Plug 'vim-scripts/railscasts'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
+" Disabled due to conflict with coc.nvim
+" Plug 'SirVer/ultisnips'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
@@ -58,7 +61,9 @@ Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/rainux/vim-vala.git'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
-Plug 'https://github.com/tpope/vim-endwise.git'
+" endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
+" Disabled due to conflict with coc.nvim
+" Plug 'https://github.com/tpope/vim-endwise.git'
 Plug 'https://github.com/tpope/vim-flatfoot.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-git.git'
