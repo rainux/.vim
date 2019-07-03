@@ -45,7 +45,7 @@ map ,sp :set spell!<CR>
 " Code moved to .gvimrc
 
 " ,r is Compile and Run
-map ,r :call <SID>Run()<CR>
+map ,run :call <SID>Run()<CR>
 
 function! s:Run()
   if exists('b:current_compiler')
@@ -109,8 +109,8 @@ endfor
 " ,* is Substitute(Replace)
 nmap ,* :%s/<C-R><C-W>/
 
-" ,ag is Search in files via ag
-nmap ,ag :execute 'Ag! ' . input("Ag search for pattern: ", "<C-R><C-W>") . ' ' . g:ProjectRoot()<CR>
+" ,rg is Search in files via rg
+nmap ,rg :execute 'Grepper -noprompt -tool rg -query ' . input("Rg search for pattern: ", "<C-R><C-W>")<CR>
 
 " NERD commenter mappings
 nmap ,cc        <Plug>NERDCommenterComment

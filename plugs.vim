@@ -17,13 +17,18 @@ Plug 'yous/vim-open-color'
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 
+" Searchers
+Plug 'wincent/command-t', { 'do': 'rake make' }
+Plug 'mhinz/vim-grepper'
+
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+  Plug 'honza/vim-snippets'
 
 " Programming languages support
-Plug 'fatih/vim-go'
-Plug 'rust-lang/rust.vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
+  Plug 'cespare/vim-toml'
 
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually
@@ -32,19 +37,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
-" Plug 'https://github.com/wincent/command-t.git', {
-      " \ 'build' : {
-      " \     'windows' : 'rake make',
-      " \     'cygwin' : 'rake make',
-      " \     'mac' : 'rake make',
-      " \     'linux' : 'rake make',
-      " \     'unix' : 'rake make',
-      " \    },
-      " \ }
 Plug 'https://github.com/Lokaltog/vim-easymotion.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
-Plug 'rking/ag.vim'
 " PlugLazy 'DrawIt'
 " PlugLazy 'bufexplorer.zip'
 Plug 'vim-scripts/matrix.vim--Yang'

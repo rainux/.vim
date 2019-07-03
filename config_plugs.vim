@@ -195,7 +195,6 @@ let g:coc_snippet_next = '<tab>'
 " ....................................................................... }}}2
 " ....................................................................... }}}1
 
-
 " vim-chalk  ............................................................ {{{1
 let g:chalk_char = "."
 let g:chalk_edit = 0
@@ -218,6 +217,13 @@ nmap -z <Plug>ChalkDown      " Decrement current fold level
 vmap =z <Plug>ChalkUp        " Increment levels in selection
 vmap -z <Plug>ChalkDown      " Decrement levels in selection
 " ....................................................................... }}}1
+
+" vim-grepper  .......................................................... {{{1
+let g:grepper       = {}
+let g:grepper.dir   = 'repo,file'
+let g:grepper.tools = ['git', 'rg', 'ag']
+" ....................................................................... }}}1
+
 
 " std_c
 let c_syntax_for_h = 1
