@@ -12,6 +12,10 @@ Plug 'dbmrq/vim-chalk'          " Better fold markers
 Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
 
 " Vim schemes
+Plug 'chriskempson/base16-vim'
+Plug 'shapeoflambda/dark-purple.vim'
+Plug 'benburrill/potato-colors'
+Plug 'yous/vim-open-color'
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 

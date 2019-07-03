@@ -240,6 +240,7 @@ set showbreak=>>
 set shellslash
 set showcmd
 set smartindent
+set termguicolors
 set ttimeoutlen=50
 if v:version >= 703
   set undodir=~/.vim/undodir
@@ -259,7 +260,7 @@ set diffopt=filler,iwhite,vertical
 
 set foldtext=MyFoldText()
 function! MyFoldText()
-  let foldtext = substitute(foldtext(), '\s\+\d\+\s\+lines:\s\+', ' ', 'g')
+  let foldtext = substitute(foldtext(), '\s*\d\+\s\+lines:\s\+', ' ', 'g')
   return foldtext
 endfunction
 
@@ -271,7 +272,6 @@ if !has('nvim')
   endtry
 end
 
-color desert-warm-256
-
 source ~/.vim/key_mappings.vim
 source ~/.vim/config_plugs.vim
+source ~/.vim/setcolors.vim
