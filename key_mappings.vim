@@ -45,7 +45,7 @@ map ,sp :set spell!<CR>
 " Code moved to .gvimrc
 
 " ,r is Compile and Run
-map ,run :call <SID>Run()<CR>
+map ,r :call <SID>Run()<CR>
 
 function! s:Run()
   if exists('b:current_compiler')

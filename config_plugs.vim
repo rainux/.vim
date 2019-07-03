@@ -224,6 +224,13 @@ let g:grepper.dir   = 'repo,file'
 let g:grepper.tools = ['git', 'rg', 'ag']
 " ....................................................................... }}}1
 
+" rust.vim  ............................................................. {{{1
+let g:rustfmt_autosave = 1
+au FileType rust nmap ,b  :Cbuild<CR>
+au FileType rust nmap ,r  :Crun<CR>
+au FileType rust nmap ,t  :Ctest<CR>
+" ....................................................................... }}}1
+
 
 " std_c
 let c_syntax_for_h = 1
@@ -458,10 +465,6 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " vim-jsx
 let g:jsx_ext_required = 0
-
-
-" rust.vim
-let g:rustfmt_autosave = 1
 
 
 " vim-table-model
