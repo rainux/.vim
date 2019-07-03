@@ -411,7 +411,6 @@ let g:turbux_command_prefix = 'spring'
 
 
 " vim-go
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -453,14 +452,6 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 " vim-jsx
 let g:jsx_ext_required = 0
-
-
-" Syntastic
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
 
 
 " rust.vim

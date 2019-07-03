@@ -98,7 +98,6 @@ Plug 'vim-scripts/po.vim--Jelenak'
         " \ 'unite_sources': ['swift/device', 'swift/developer_dir']
         " \}
 Plug 'mxw/vim-jsx'
-Plug 'scrooloose/syntastic'
 Plug 'leafo/moonscript-vim'
 Plug 'tpope/vim-jdaddy'
 Plug 'elzr/vim-json'
