@@ -241,7 +241,8 @@ set shellslash
 set showcmd
 set smartindent
 set termguicolors
-set ttimeoutlen=50
+set ttimeout
+set timeoutlen=200
 if v:version >= 703
   set undodir=~/.vim/undodir
   set undofile
