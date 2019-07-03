@@ -5,8 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
-Plug 'junegunn/vim-plug'
-
 " Vim core feature extension
 Plug 'dbmrq/vim-chalk'          " Better fold markers
 Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
