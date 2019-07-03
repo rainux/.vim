@@ -7,19 +7,21 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/vim-plug'
 
+" Vim core feature extension
+Plug 'dbmrq/vim-chalk'          " Better fold markers
+Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
+
+" Vim schemes
+Plug 'rainux/Color-Scheme-Test'
+Plug 'rainux/vim-desert-warm-256'
+
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 
-" Better fold markers
-Plug 'dbmrq/vim-chalk'
-
-" Lean & mean status/tabline for vim that's light as air
-Plug 'vim-airline/vim-airline'
-
-" Scheme
-Plug 'rainux/Color-Scheme-Test'
-Plug 'rainux/vim-desert-warm-256'
+" Programming languages support
+Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually
@@ -51,7 +53,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
 Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'fatih/vim-go'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
 Plug 'https://github.com/majutsushi/tagbar.git'
@@ -103,7 +104,6 @@ Plug 'tpope/vim-jdaddy'
 Plug 'elzr/vim-json'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'othree/html5.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'justmao945/vim-clang'
 Plug 'othree/html5.vim'
 Plug 'dhruvasagar/vim-table-mode'
