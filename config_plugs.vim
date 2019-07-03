@@ -5,11 +5,15 @@
 " coc.nvim  ............................................................. {{{1
 
 let g:coc_global_extensions = [
+      \ 'coc-emoji',
       \ 'coc-git',
       \ 'coc-json',
       \ 'coc-rls',
       \ 'coc-snippets',
       \ 'coc-solargraph',
+      \ 'coc-syntax',
+      \ 'coc-tabnine',
+      \ 'coc-word',
       \ ]
 
 " Coc Core  ............................................................. {{{2
