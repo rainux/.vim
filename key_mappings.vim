@@ -1,6 +1,8 @@
 " ----------------------------------------------------------------------------
 " Key mappings
 "
+" Essential key mappsings  .............................................. {{{1
+"
 " Up & Down is display line upward & downward
 map <Up> gk
 map <Down> gj
@@ -213,3 +215,21 @@ cnoremap <C-P>         <Up>
 cnoremap <Esc><C-B>    <S-Left>
 " forward one word
 cnoremap <Esc><C-F>    <S-Right>
+" ....................................................................... }}}1
+
+" Diff mode key mappings  ............................................... {{{1
+"
+" Use <C-J/K> to move cursor between diff chunks
+nnoremap <expr> <C-J> &diff ? ']c' : '<C-W>j'
+nnoremap <expr> <C-K> &diff ? '[c' : '<C-W>k'
+" ....................................................................... }}}1
+
+" Close various informative/minor window with `q`  ...................... {{{1
+"
+" Close left window (original file) in diff mode
+nnoremap <expr> q &diff ? '<C-W>h:q<CR>' : 'q'
+" Close Vim help window
+autocmd FileType help nnoremap <buffer> q :q<CR>
+" ....................................................................... }}}1
+
+" vim: set fdm=marker fdl=0:
