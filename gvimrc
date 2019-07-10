@@ -1,16 +1,25 @@
 if has("gui_macvim")
   " Define a font list for MacOS with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
-        \"Monaco:h17",
-        \]
+        \ "Monaco:h18",
+        \ "Monoid:h18",
+        \ "Fira_Code:h22",
+        \ "Hasklig:h22",
+        \ ]
 
   let s:WinSizeList = [
-        \[170, 43],
-        \]
+        \ [140, 38],
+        \ [140, 38],
+        \ [140, 38],
+        \ [140, 35],
+        \ ]
 
   let s:WinPosList  = [
-        \[50, 10],
-        \]
+        \ [0, 0],
+        \ [0, 0],
+        \ [0, 0],
+        \ [0, 0],
+        \ ]
 
   for i in [1, 2, 3, 4, 5, 6, 7, 8, 9]
     exec printf('map <D-%d> %dgt', i, i)
@@ -23,54 +32,54 @@ end
 if has("gui_gtk2")
   " Define a font list for GTK2 with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
-        \"Monaco\\ 13",
-        \"Bitstream\\ Vera\\ Sans\\ Mono\\ 11",
-        \"DejaVu\\ Sans\\ Mono\\ 11",
-        \"Inconsolat1\\ 11",
-        \]
+        \ "Monaco\\ 13",
+        \ "Bitstream\\ Vera\\ Sans\\ Mono\\ 11",
+        \ "DejaVu\\ Sans\\ Mono\\ 11",
+        \ "Inconsolat1\\ 11",
+        \ ]
 
   let s:WinSizeList = [
-        \[130, 38],
-        \[130, 38],
-        \[130, 38],
-        \[130, 38]
-        \]
+        \ [130, 38],
+        \ [130, 38],
+        \ [130, 38],
+        \ [130, 38]
+        \ ]
 
   let s:WinPosList  = [
-        \[0, 30],
-        \[0, 30],
-        \[0, 30],
-        \[0, 30]
-        \]
+        \ [0, 30],
+        \ [0, 30],
+        \ [0, 30],
+        \ [0, 30]
+        \ ]
 end
 
 if has("gui_win32")
   " Define a font list for Win32 with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
-        \"Monaco:h10",
-        \"Lucida_Console:h14",
-        \"Consolas:h14"
-        \]
+        \ "Monaco:h10",
+        \ "Lucida_Console:h14",
+        \ "Consolas:h14"
+        \ ]
 
   let s:WinSizeList = [
-        \[256, 64],
-        \[256, 64],
-        \[256, 64],
-        \[256, 64],
-        \[256, 64],
-        \[256, 64],
-        \[256, 64]
-        \]
+        \ [256, 64],
+        \ [256, 64],
+        \ [256, 64],
+        \ [256, 64],
+        \ [256, 64],
+        \ [256, 64],
+        \ [256, 64]
+        \ ]
 
   let s:WinPosList  = [
-        \[9, -4],
-        \[9, -4],
-        \[9, -4],
-        \[9, -4],
-        \[9, -4],
-        \[6, -4],
-        \[9, -4]
-        \]
+        \ [9, -4],
+        \ [9, -4],
+        \ [9, -4],
+        \ [9, -4],
+        \ [9, -4],
+        \ [6, -4],
+        \ [9, -4]
+        \ ]
 end
 
 " Set default index to 0
@@ -126,6 +135,7 @@ endfunction
 
 
 set guitablabel=%{GuiTabLabel()}
+set macligatures
 
 " Initialize GUI font and window settings
 call s:SetGuiFont(g:CUR_FONT_INDEX)
@@ -143,6 +153,8 @@ endif
 "
 " ,fo is Change GUI font
 map ,fo :call <SID>ChangeGuiFont(0)<CR>
+" ,fi is Change GUI font in inverse order
+map ,fi :call <SID>ChangeGuiFont(1)<CR>
 
 function! s:ChangeGuiFont(Inverse)
   let OldIndex = g:CUR_FONT_INDEX
@@ -161,13 +173,13 @@ function! s:ChangeGuiFont(Inverse)
   if s:SetGuiFont(g:CUR_FONT_INDEX) == 0
     call s:SetWinSize(g:CUR_FONT_INDEX)
     call s:SetWinPos(g:CUR_FONT_INDEX)
-    echo iconv("\rGUI font has changed to \"" .
-          \ s:GuiFontList[g:CUR_FONT_INDEX] . '"', &tenc, &enc)
+    echomsg 'GUI font has changed to "' .
+          \ s:GuiFontList[g:CUR_FONT_INDEX] . '"'
   else
     call s:SetWinSize(OldIndex)
     call s:SetWinPos(OldIndex)
-    echohl ErrorMsg | echo iconv("\rError changing GUI font. Maybe selected font \"" .
-          \ s:GuiFontList[g:CUR_FONT_INDEX] . "\" not exists.", &tenc, &enc)
+    echohl ErrorMsg | echomsg 'Error changing GUI font. Maybe selected font "' .
+          \ s:GuiFontList[g:CUR_FONT_INDEX] . '" not exists.'
           \ | echohl None
   endif
 endfunction

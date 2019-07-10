@@ -44,6 +44,7 @@ map ,nf :NERDTreeTabsFind<CR>
 map ,sp :set spell!<CR>
 
 " ,fo is Change GUI font
+" ,fi is Change GUI font in inverse order
 " Code moved to .gvimrc
 
 " ,r is Compile and Run
