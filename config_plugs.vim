@@ -311,7 +311,7 @@ let g:airline#extensions#default#section_truncate_width = {
 call airline#parts#define_function('filesize', 'GetFileSize')
 call airline#parts#define_function('charcode', 'GetCharCode')
 
-function! GetFileSize() " {{{2
+function! GetFileSize() " ............................................... {{{2
   let bytes = getfsize(expand("%:p"))
 
   if bytes <= 0
@@ -323,9 +323,9 @@ function! GetFileSize() " {{{2
   else
     return (bytes / 1024) . 'kB'
   endif
-endfunction "}}}2
+endfunction " ........................................................... }}}2
 
-function! GetCharCode() " {{{2
+function! GetCharCode() " ............................................... {{{2
   " Get the output of :ascii
   redir => ascii
   silent! ascii
@@ -354,7 +354,7 @@ function! GetCharCode() " {{{2
   let nr = printf(nrformat, nr)
 
   return "'". char ."' ". nr
-endfunction "}}}2
+endfunction " ........................................................... }}}2
 
 function! AirlineInit()
   let g:airline_section_y = airline#section#create(['charcode', ' | ', 'filesize', ' | ', 'ffenc', ' | ', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'])

@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 " Vim core feature extension
 Plug 'dbmrq/vim-chalk'          " Better fold markers
 Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline-themes'
 
 " Vim schemes
 Plug 'rainux/Color-Scheme-Test'

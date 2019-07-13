@@ -234,6 +234,7 @@ set linebreak
 set list
 set listchars=tab:>-,trail:-,nbsp:%
 set modeline
+set noshowmode
 set number
 set ruler
 set showbreak=>>
