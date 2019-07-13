@@ -308,9 +308,6 @@ let g:airline#extensions#default#section_truncate_width = {
   \ 'y': 120
   \ }
 
-call airline#parts#define_function('filesize', 'GetFileSize')
-call airline#parts#define_function('charcode', 'GetCharCode')
-
 function! GetFileSize() " ............................................... {{{2
   let bytes = getfsize(expand("%:p"))
 
@@ -356,11 +353,16 @@ function! GetCharCode() " ............................................... {{{2
   return "'". char ."' ". nr
 endfunction " ........................................................... }}}2
 
-function! AirlineInit()
-  let g:airline_section_y = airline#section#create(['charcode', ' | ', 'filesize', ' | ', 'ffenc', ' | ', 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'])
+function! s:AirlineConfig()
+  call airline#parts#define_function('filesize', 'GetFileSize')
+  call airline#parts#define_function('charcode', 'GetCharCode')
+
+  let g:airline_section_y = airline#section#create(
+        \ ['charcode', ' | ', 'filesize', ' | ', 'ffenc', ' | ',
+        \ 'sts:%{&sts}:sw:%{&sw}:ts:%{&ts}:tw:%{&tw}'])
 endfunction
 
-autocmd VimEnter * call AirlineInit()
+autocmd User AirlineAfterInit call s:AirlineConfig()
 " ....................................................................... }}}1
 
 

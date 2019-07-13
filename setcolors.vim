@@ -109,7 +109,9 @@ function! s:NextColor(how, echo_color)
     try
       execute 'colorscheme '.s:mycolors[current]
       let g:CUR_COLOR_INDEX = current
-      execute 'AirlineTheme '.s:mycolors[current]
+      if exists(':AirlineTheme')
+        execute 'AirlineTheme '.s:mycolors[current]
+      endif
       break
     catch /E185:/
       call add(missing, s:mycolors[current])
