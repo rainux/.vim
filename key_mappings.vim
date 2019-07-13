@@ -174,6 +174,8 @@ nmap ,vev :tabe $HOME/.vim/vimrc<CR>
 nmap ,vep :tabe $HOME/.vim/plugs.vim<CR>
 " ,pi   Install plugs defined in plugs.vim
 nmap ,pi  :source $HOME/.vim/plugs.vim<CR>:PlugInstall<CR>
+" ,pc   Clean uninstalled/invalid plugs
+nmap ,pc  :source $HOME/.vim/plugs.vim<CR>:PlugClean<CR>
 " ....................................................................... }}}1
 
 " Git related keymappings  .............................................. {{{1
