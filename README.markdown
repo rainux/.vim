@@ -1,12 +1,11 @@
 Overview
 ========
 
-My .vimrc and plugins, plugins are installed by
+My vimrc and plugins, plugins are installed by
 [vim-plug](https://github.com/junegunn/vim-plug).
 
-View .vimrc for key mappings and plugs.vim for installed plugin bundles.
-A simple document providing an overview of installed plugins will be slowly
-updated. Run command `:help rainux` to check it out.
+View `key_mappings.vim` for key mappings and `plugs.vim` for installed plugins,
+both files are heavily documented inline.
 
 Installation
 ============

@@ -67,7 +67,7 @@ endfunction
 
 
 " Toggle indent style smartly
-function! s:ToggleIndentStyle(...)
+function! g:ToggleIndentStyle(...)
   if a:0
     if a:1 == 8
       " Do not show ugly tab chars for indent with 8
@@ -87,12 +87,12 @@ function! s:ToggleIndentStyle(...)
 
     if &expandtab
       let b:previous_indent_width = &shiftwidth
-      call s:ToggleIndentStyle(8, 1)
+      call g:ToggleIndentStyle(8, 1)
     else
       if !exists('b:previous_indent_width')
         let b:previous_indent_width = 4
       endif
-      call s:ToggleIndentStyle(b:previous_indent_width, 1)
+      call g:ToggleIndentStyle(b:previous_indent_width, 1)
     endif
   endif
 endfunction
@@ -162,11 +162,11 @@ if has('autocmd')
     function! s:BufEnter()
       " Set indent style for diffent file type
       if index(s:indent2_types, &ft) >= 0
-        call s:ToggleIndentStyle(2)
+        call g:ToggleIndentStyle(2)
       elseif index(s:indent8_types, &ft) >= 0
-        call s:ToggleIndentStyle(8)
+        call g:ToggleIndentStyle(8)
       else
-        call s:ToggleIndentStyle(4)
+        call g:ToggleIndentStyle(4)
       endif
 
       " Change to directory of current file automatically when current file is not

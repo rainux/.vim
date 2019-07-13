@@ -151,12 +151,12 @@ endif
 " ----------------------------------------------------------------------------
 " Key mappings
 "
-" ,fo is Change GUI font
+" ,fo   Cycle GUI font
 map ,fo :call <SID>ChangeGuiFont(0)<CR>
-" ,fi is Change GUI font in inverse order
+" ,fi   Cycle GUI font in inverse order
 map ,fi :call <SID>ChangeGuiFont(1)<CR>
 
-function! s:ChangeGuiFont(Inverse)
+function! s:ChangeGuiFont(Inverse) " .................................... {{{1
   let OldIndex = g:CUR_FONT_INDEX
   if a:Inverse == 0
     let g:CUR_FONT_INDEX = g:CUR_FONT_INDEX + 1
@@ -182,12 +182,12 @@ function! s:ChangeGuiFont(Inverse)
           \ s:GuiFontList[g:CUR_FONT_INDEX] . '" not exists.'
           \ | echohl None
   endif
-endfunction
+endfunction " ........................................................... }}}1
 
-" ,w is Toggle wrap
-map ,w :call <SID>ToggleGuiOption("b")<CR>:set wrap!<CR>
+" ,w    Toggle wrap
+map ,w  :call <SID>ToggleGuiOption("b")<CR>:set wrap!<CR>
 
-function! s:ToggleGuiOption(option)
+function! s:ToggleGuiOption(option) " ................................... {{{1
   " If a:option is already set in guioptions, then we want to remove it
   if match(&guioptions, "\\C" . a:option) > -1
     exec "set go-=" . a:option
@@ -197,4 +197,6 @@ function! s:ToggleGuiOption(option)
   if has("gui_running")
     call s:SetWinPos(g:CUR_FONT_INDEX)
   endif
-endfunction
+endfunction " ........................................................... }}}1
+
+" vim: set fdm=marker fdl=0:
