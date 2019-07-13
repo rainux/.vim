@@ -21,6 +21,11 @@ Plug 'rainux/vim-desert-warm-256'
 Plug 'wincent/command-t', { 'do': 'rake make' }
 Plug 'mhinz/vim-grepper'
 
+" Git support
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'airblade/vim-gitgutter'
+
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
@@ -60,8 +65,6 @@ Plug 'https://github.com/tpope/vim-abolish.git'
 " Disabled due to conflict with coc.nvim
 " Plug 'https://github.com/tpope/vim-endwise.git'
 Plug 'https://github.com/tpope/vim-flatfoot.git'
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/tpope/vim-git.git'
 Plug 'https://github.com/tpope/vim-markdown.git'
 Plug 'https://github.com/tpope/vim-ragtag.git'
 Plug 'https://github.com/tpope/vim-repeat.git'

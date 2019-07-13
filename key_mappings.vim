@@ -135,18 +135,6 @@ nmap ,ff :set ff=unix<CR>:%!fromdos<CR>gg=G:%s/\s\+$//ge<CR>
 " ,fc is clean code
 nmap ,fc :set ff=unix<CR>:%!fromdos<CR>:%s/\s\+$//ge<CR>
 
-" fugitive mappings
-nmap ,gac :Gcommit --amend<CR>
-nmap ,gb  :Gblame<CR>
-nmap ,gc  :Gcommit<CR>
-nmap ,gd  :Gvdiff<CR>
-nmap ,ge  :Gedit<CR>
-nmap ,gg  :Ggrep<Space>
-nmap ,gq  :Git checkout HEAD %<CR>
-nmap ,gr  :Gread<CR>
-nmap ,gs  :Gstatus<CR>
-nmap ,gw  :Gwrite<CR>
-
 " Make it easy to update/reload .vimrc
 nmap ,vs :source $HOME/.vim/vimrc<CR>:source $HOME/.vim/gvimrc<CR>
 nmap ,vev :tabe $HOME/.vim/vimrc<CR>
@@ -218,6 +206,39 @@ cnoremap <Esc><C-B>    <S-Left>
 cnoremap <Esc><C-F>    <S-Right>
 " ....................................................................... }}}1
 
+" Git related keymappings  .............................................. {{{1
+"
+" vim-fugitive
+nmap ,gac :Gcommit --amend<CR>
+nmap ,gb  :Gblame<CR>
+nmap ,gc  :Gcommit<CR>
+nmap ,gd  :Gvdiff<CR>
+nmap ,ge  :Gedit<CR>
+nmap ,gg  :Ggrep<Space>
+nmap ,gq  :Git checkout HEAD %<CR>
+nmap ,gr  :Gread<CR>
+nmap ,gs  :Gstatus<CR>
+nmap ,gw  :Gwrite<CR>
+
+" vim-gitgutter
+nmap zg :GitGutterFold<CR>
+nmap glh :GitGutterLineHighlightsToggle<CR>
+nmap glh :GitGutterLineHighlightsToggle<CR>
+nmap ]c <Plug>GitGutterNextHunk
+nmap [c <Plug>GitGutterPrevHunk
+nmap ghs <Plug>GitGutterStageHunk
+nmap ghu <Plug>GitGutterUndoHunk
+nmap ghp <Plug>GitGutterPreviewHunk
+
+" coc-git
+" gci is show chunk diff at current position
+nmap gci <Plug>(coc-git-chunkinfo)
+" gsc is show commit contains current position
+nmap gsc <Plug>(coc-git-commit)
+" gdc is show cached diff in preview window.
+nmap gdc :CocCommand git.diffCached<CR>
+" ....................................................................... }}}1
+
 " Diff mode key mappings  ............................................... {{{1
 "
 " Use <C-J/K> to move cursor between diff chunks
@@ -231,6 +252,8 @@ nnoremap <expr> <C-K> &diff ? '[c' : '<C-W>k'
 nnoremap <expr> q &diff ? '<C-W>h:q<CR>' : 'q'
 " Close Vim help window
 autocmd FileType help nnoremap <buffer> q :q<CR>
+" Close fugitive window
+autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
 " ....................................................................... }}}1
 
 " vim: set fdm=marker fdl=0:

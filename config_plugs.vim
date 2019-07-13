@@ -140,25 +140,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " ....................................................................... }}}2
 
-" coc-git  .............................................................. {{{2
-"
-" navigate chunks of current buffer
-nmap [g <Plug>(coc-git-prevchunk)
-nmap ]g <Plug>(coc-git-nextchunk)
-" show chunk diff at current position
-nmap gci <Plug>(coc-git-chunkinfo)
-" show commit contains current position
-nmap gsc <Plug>(coc-git-commit)
-" Stage current chunk
-nmap gcs :CocCommand git.chunkStage<CR>
-" Undo current chunk
-nmap gcu :CocCommand git.chunkUndo<CR>
-" Show cached diff in preview window.
-nmap gdc :CocCommand git.diffCached<CR>
-" Fold unchanged lines of current buffer.
-nmap gfu :CocCommand git.foldUnchanged<CR>
-" ....................................................................... }}}2
-
 " coc-snippets  ......................................................... {{{2
 "
 " Show snippets
