@@ -26,6 +26,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
 
+" General programming support
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'xuhdev/SingleCompile'
+
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
@@ -83,7 +87,6 @@ Plug 'godlygeek/tabular'
 Plug 'vim-scripts/CRefVim'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
 Plug 'pangloss/vim-javascript'
-Plug 'vim-scripts/SingleCompile'
 " Plug 'bash-support.vim', {'bind': 0, 'tags': ['bash', 'slow']}
 " Plug 'c.vim', {'bind': 0, 'tags': ['c', 'slow']}
 Plug 'vim-scripts/echofunc.vim'

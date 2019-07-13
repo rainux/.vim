@@ -116,38 +116,10 @@ nmap ,tb :CommandTBuffer<CR>
 
 " Work with code  ....................................................... {{{1
 
-" ,r    Compile and Run
-map ,r :call <SID>Run()<CR>
-function! s:Run() " ..................................................... {{{2
-  if exists('b:current_compiler')
-    make
-  endif
-
-  let ExeFile = substitute(bufname('%'), '\.[^.]\+$', '.exe', '')
-  if filereadable(ExeFile)
-    if has('win32')
-      execute '!.\"' . ExeFile . '"'
-    else
-      execute '!./"' . ExeFile . '"'
-    endif
-  elseif !exists('b:current_compiler')
-    " Only try to execute current file as script when no CompilerSet
-    if has('win32')
-      execute '!.\"' . bufname('%') . '"'
-    else
-      execute '!./"' . bufname('%') . '"'
-    endif
-  endif
-endfunction " ........................................................... }}}2
-" ,co   Compile
-map ,co :call <SID>Compile()<CR>
-function! s:Compile() " ................................................. {{{2
-  if exists('b:current_compiler')
-    make
-  else
-    echohl ErrorMsg | echo 'No CompilerSet for this type of file' | echohl None
-  endif
-endfunction " ........................................................... }}}2
+" ,sr     Compile and Run with SingleCompile
+nmap ,sr  :SCCompileRun<CR>
+" ,sc     Compile with SingleCompile
+nmap ,sc  :SCCompile<CR>
 
 " ,> ,< Jump to next or prev error
 nmap ,> :lnext<CR>
