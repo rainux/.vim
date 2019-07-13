@@ -213,6 +213,7 @@ endif
 set autoindent
 set background=dark
 set backspace=indent,eol,start
+set cmdheight=2
 set colorcolumn=120
 set completeopt=menuone,longest,preview
 set directory=~/.vim/tmp,/var/tmp,/tmp
@@ -239,7 +240,9 @@ set number
 set ruler
 set showbreak=>>
 set shellslash
+set shortmess+=c
 set showcmd
+set signcolumn=yes
 set smartindent
 set termguicolors
 set ttimeout
@@ -248,6 +251,7 @@ if v:version >= 703
   set undodir=~/.vim/undodir
   set undofile
 endif
+set updatetime=100
 if has('nvim')
   set viminfo=!,'1000,<100,c,f1,h,s10
 else

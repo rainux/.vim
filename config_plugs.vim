@@ -16,6 +16,7 @@ let g:coc_global_extensions = [
       \ 'coc-word',
       \ ]
 
+function! s:CocConfig()
 " Coc Core  ............................................................. {{{2
 "
 " if hidden is not set, TextEdit might fail.
@@ -24,18 +25,6 @@ set hidden
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
-
-" Better display for messages
-set cmdheight=2
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -94,7 +83,7 @@ augroup mygroup
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+augroup END
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
 xmap <leader>a  <Plug>(coc-codeaction-selected)
@@ -174,6 +163,9 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 " ....................................................................... }}}2
+endfunction
+
+autocmd User CocNvimInit call s:CocConfig()
 " ....................................................................... }}}1
 
 " vim-chalk  ............................................................ {{{1
