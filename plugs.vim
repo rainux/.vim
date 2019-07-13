@@ -13,7 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Vim schemes
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
-Plug 'chriskempson/base16-vim'
+Plug 'rainux/base16-vim'
 
 " Searchers
 Plug 'wincent/command-t', { 'do': 'rake make' }
