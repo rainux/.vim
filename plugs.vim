@@ -10,12 +10,9 @@ Plug 'dbmrq/vim-chalk'          " Better fold markers
 Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
 
 " Vim schemes
-Plug 'chriskempson/base16-vim'
-Plug 'shapeoflambda/dark-purple.vim'
-Plug 'benburrill/potato-colors'
-Plug 'yous/vim-open-color'
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
+Plug 'chriskempson/base16-vim'
 
 " Searchers
 Plug 'wincent/command-t', { 'do': 'rake make' }
@@ -53,7 +50,6 @@ Plug 'https://github.com/rainux/tslime.vim.git'
 Plug 'vim-scripts/matrix.vim--Yang'
 Plug 'vim-scripts/taskpaper.vim'
 Plug 'vim-scripts/vim2ansi'
-Plug 'vim-scripts/railscasts'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
