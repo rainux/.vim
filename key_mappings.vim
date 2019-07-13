@@ -31,9 +31,6 @@ map ,hs :set hlsearch!<CR>
 " ,tl is Toggle Tag List
 map ,tl :TagbarToggle<CR>
 
-" ,u is Toggle Gundo
-map ,u :GundoToggle<CR>
-
 " ,nt is Toggle NERDTreeTabs
 map ,nt :NERDTreeTabsToggle<CR>
 
