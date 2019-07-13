@@ -9,7 +9,6 @@
     }
   },
   "snippets.ultisnips.directories": [
-    "UltiSnips",
     "gosnippets/UltiSnips"
   ],
   "solargraph.commandPath": "/Users/rainux/.rbenv/shims/solargraph"
