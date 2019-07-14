@@ -245,6 +245,9 @@ set showcmd
 set signcolumn=yes
 set smartindent
 set termguicolors
+" Required for true colors support in tmux
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set ttimeout
 set timeoutlen=500
 if v:version >= 703
