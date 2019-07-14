@@ -22,6 +22,9 @@ Plug 'rainux/base16-vim'
 Plug 'wincent/command-t', { 'do': 'rake make' }
 Plug 'mhinz/vim-grepper'
 
+" General text editing
+Plug 'godlygeek/tabular'        " Align text with :Tabularize command
+
 " Git support
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -57,7 +60,6 @@ Plug 'vim-scripts/vim2ansi'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
-Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
 Plug 'https://github.com/rainux/vim-vala.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
@@ -72,7 +74,6 @@ Plug 'https://github.com/tpope/vim-repeat.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-unimpaired.git'
 Plug 'vim-scripts/vcscommand.vim'
-Plug 'godlygeek/tabular'
 " PlugLazy 'Valloric/YouCompleteMe', {
      " \ 'build'      : {
         " \ 'mac'     : './install.py',
