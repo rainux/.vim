@@ -87,6 +87,13 @@ Plug 'vim-scripts/std_c.zip'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
 " ....................................................................... }}}1
 
+" Productivity tools  ................................................... {{{1
+"
+" This package contains a syntax file and a file-type plugin for the simple
+" format used by the TaskPaper application.
+Plug 'davidoc/taskpaper.vim'
+" ....................................................................... }}}1
+
 " Legacy rarely used toy  ............................................... {{{1
 "
 " Ascii drawing plugin: lines, ellipses, arrows, fills, and more!
@@ -103,7 +110,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
-Plug 'vim-scripts/taskpaper.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:

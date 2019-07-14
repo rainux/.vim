@@ -239,6 +239,23 @@ autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
 " splitjoin.vim
 " gS    Split a one-liner into multiple lines
 " gJ    (with the cursor on the first line of a block) Join a block into a single-line statement
+
+" taskpaper.vim
+" \td     Mark task as done
+" \tx     Mark task as cancelled
+" \tt     Mark task as today
+" \tD     Archive @done items
+" \tX     Show tasks marked as cancelled
+" \tT     Show tasks marked as today
+" \t/     Search for items including keyword
+" \ts     Search for items including tag
+" \tp     Fold all projects
+" \t.     Fold all notes
+" \tP     Focus on the current project
+" \tj     Go to next project
+" \tk     Go to previous project
+" \tg     Go to specified project
+" \tm     Move task to specified project
 "  ...................................................................... }}}1
 
 " vim: set fdm=marker fdl=0:
