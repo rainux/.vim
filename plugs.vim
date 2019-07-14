@@ -30,6 +30,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'xuhdev/SingleCompile'
 Plug 'scrooloose/nerdcommenter'
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -58,7 +59,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
-Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/rainux/vim-vala.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
@@ -91,7 +91,6 @@ Plug 'vim-scripts/jQuery'
 " PlugLazy 'lua-support'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/std_c.zip'
-Plug 'vim-scripts/taglist.vim', { 'on': 'TlistToggle' }
 Plug 'vim-scripts/po.vim--Jelenak'
 " Plug 'kballard/vim-swift', {
         " \ 'filetypes': 'swift',

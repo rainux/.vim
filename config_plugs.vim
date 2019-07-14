@@ -274,7 +274,7 @@ nmap d<C-A>     <Plug>SpeedDatingNowUTC
 nmap d<C-X>     <Plug>SpeedDatingNowLocal
 
 
-" Tagbar
+" Tagbar  ............................................................... {{{1
 let g:tagbar_type_coffee = {
       \ 'ctagstype': 'CoffeeScript',
       \ 'kinds': [
@@ -284,7 +284,7 @@ let g:tagbar_type_coffee = {
       \ ],
       \ 'sort': 0
       \ }
-
+" ....................................................................... }}}1
 
 " po.vim
 let maplocalleader = ','
