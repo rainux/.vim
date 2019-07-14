@@ -162,6 +162,10 @@ nmap ,cn        <Plug>NERDCommenterNest
 vmap ,cn        <Plug>NERDCommenterNest
 nmap ,cu        <Plug>NERDCommenterUncomment
 vmap ,cu        <Plug>NERDCommenterUncomment
+
+" splitjoin.vim
+" gS    Split a one-liner into multiple lines
+" gJ    (with the cursor on the first line of a block) Join a block into a single-line statement
 " ....................................................................... }}}1
 
 " Work with vim configurations  ......................................... {{{1

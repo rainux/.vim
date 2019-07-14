@@ -31,6 +31,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'xuhdev/SingleCompile'
 Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -57,7 +58,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
 Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
 Plug 'https://github.com/rainux/vim-vala.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
