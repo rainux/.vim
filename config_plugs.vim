@@ -258,7 +258,7 @@ endfunction
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 " ....................................................................... }}}1
 
-" std_c
+" std_c  ................................................................ {{{1
 let c_syntax_for_h = 1
 let c_C94 = 1
 let c_C99 = 1
@@ -273,7 +273,7 @@ let c_comment_strings = 1
 let c_comment_numbers = 1
 let c_comment_types = 1
 let c_comment_date_time = 1
-
+" ....................................................................... }}}1
 
 " rubycomplete
 let g:rubycomplete_buffer_loading = 1
@@ -475,9 +475,5 @@ let g:jsx_ext_required = 0
 
 " vim-table-model
 let g:table_mode_corner='|'
-
-
-" UltiSnips
-let g:UltiSnipsNoPythonWarning = 1
 
 " vim: set fdm=marker fdl=0:

@@ -85,8 +85,6 @@ map ,nf :NERDTreeTabsFind<CR>
 " ,tl   Toggle Tagbar
 map ,tl :TagbarToggle<CR>
 
-" \be \bt \bs \bv   Toogle Buffer Explorer in various way
-
 " ,fo   Cycle GUI font
 " ,fi   Cycle GUI font in inverse order
 " ,w    Toggle wrap
@@ -164,10 +162,6 @@ nmap ,cn        <Plug>NERDCommenterNest
 vmap ,cn        <Plug>NERDCommenterNest
 nmap ,cu        <Plug>NERDCommenterUncomment
 vmap ,cu        <Plug>NERDCommenterUncomment
-
-" splitjoin.vim
-" gS    Split a one-liner into multiple lines
-" gJ    (with the cursor on the first line of a block) Join a block into a single-line statement
 " ....................................................................... }}}1
 
 " Work with vim configurations  ......................................... {{{1
@@ -233,5 +227,18 @@ autocmd FileType help nnoremap <buffer> q :q<CR>
 " Close fugitive window
 autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
 " ....................................................................... }}}1
+
+" Default mappings coming from plugins  ................................. {{{1
+"
+" \be \bt \bs \bv   Toogle Buffer Explorer in various way
+"
+" \cr \cc \cw       Lookup C reference manual provided by CRefVim
+"
+" \di \ds           Start/Stop DrawIt
+"
+" splitjoin.vim
+" gS    Split a one-liner into multiple lines
+" gJ    (with the cursor on the first line of a block) Join a block into a single-line statement
+"  ...................................................................... }}}1
 
 " vim: set fdm=marker fdl=0:

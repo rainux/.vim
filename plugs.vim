@@ -60,6 +60,8 @@ Plug 'airblade/vim-gitgutter'
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
+" Extended % matching for HTML, LaTeX, and many other languages
+Plug 'vim-scripts/matchit.zip'
 " A Vim plugin for visually displaying indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
 " A Vim plugin making it more convenient to compile or run a single source file.
@@ -77,10 +79,18 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
   Plug 'cespare/vim-toml'
+" A C-reference manual especially designed for Vim
+Plug 'vim-scripts/CRefVim'
+" This C syntax file is to help developing portable Standard C code.
+Plug 'vim-scripts/std_c.zip'
+" NSIS syntax file for NSIS 2.46
+Plug 'vim-scripts/NSIS-syntax-highlighting'
 " ....................................................................... }}}1
 
 " Legacy rarely used toy  ............................................... {{{1
 "
+" Ascii drawing plugin: lines, ellipses, arrows, fills, and more!
+Plug 'vim-scripts/DrawIt'
 " Convert highlighted text into ansi control sequence
 Plug 'vim-scripts/vim2ansi'
 " Matrix screensaver for VIM, inspired by Chris Allegretta's cmatrix.
@@ -93,7 +103,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
-" PlugLazy 'DrawIt'
 Plug 'vim-scripts/taskpaper.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 
@@ -111,16 +120,8 @@ Plug 'https://github.com/tpope/vim-repeat.git'
 " Plug 'https://github.com/tpope/vim-speeddating.git', {'bind': 0, 'tags': ['date', 'slow']}
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-unimpaired.git'
-Plug 'vim-scripts/CRefVim'
-Plug 'vim-scripts/NSIS-syntax-highlighting'
 Plug 'pangloss/vim-javascript'
-" Plug 'bash-support.vim', {'bind': 0, 'tags': ['bash', 'slow']}
-" Plug 'c.vim', {'bind': 0, 'tags': ['c', 'slow']}
-Plug 'vim-scripts/echofunc.vim'
-Plug 'vim-scripts/jQuery'
 " PlugLazy 'lua-support'
-Plug 'vim-scripts/matchit.zip'
-Plug 'vim-scripts/std_c.zip'
 " Plug 'kballard/vim-swift', {
         " \ 'filetypes': 'swift',
         " \ 'unite_sources': ['swift/device', 'swift/developer_dir']
