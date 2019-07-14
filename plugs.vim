@@ -76,15 +76,11 @@ Plug 'AndrewRadev/splitjoin.vim'
 
 " Programming languages support  ........................................ {{{1
 "
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
-  Plug 'cespare/vim-toml'
-Plug 'kchmck/vim-coffee-script'
-Plug 'leafo/moonscript-vim'
-Plug 'ekalinin/Dockerfile.vim'
-" A better JSON for Vim: distinct highlighting of keywords vs values,
-" JSON-specific (non-JS) warnings, quote concealing.
-Plug 'elzr/vim-json'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+" A collection of language packs for Vim virtually support all popular
+" programming languages.
+Plug 'sheerun/vim-polyglot'
 " JSON manipulation and pretty printing
 Plug 'tpope/vim-jdaddy'
 " A C-reference manual especially designed for Vim
@@ -123,40 +119,24 @@ Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
-Plug 'https://github.com/rainux/vim-vala.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 " Disabled due to conflict with coc.nvim
 " Plug 'https://github.com/tpope/vim-endwise.git'
 Plug 'https://github.com/tpope/vim-flatfoot.git'
-Plug 'https://github.com/tpope/vim-markdown.git'
 Plug 'https://github.com/tpope/vim-ragtag.git'
 Plug 'https://github.com/tpope/vim-repeat.git'
 " Plug 'https://github.com/tpope/vim-speeddating.git', {'bind': 0, 'tags': ['date', 'slow']}
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-unimpaired.git'
-Plug 'pangloss/vim-javascript'
-" PlugLazy 'lua-support'
-" Plug 'kballard/vim-swift', {
-        " \ 'filetypes': 'swift',
-        " \ 'unite_sources': ['swift/device', 'swift/developer_dir']
-        " \}
-Plug 'mxw/vim-jsx'
-Plug 'othree/html5.vim'
-Plug 'justmao945/vim-clang'
-Plug 'othree/html5.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'junegunn/vim-easy-align'
 
 " Ruby/Rails Programming:
-Plug 'https://github.com/vim-ruby/vim-ruby.git'
 Plug 'https://github.com/nelstrom/vim-textobj-rubyblock.git'
 Plug 'https://github.com/tpope/vim-bundler.git'
-Plug 'https://github.com/tpope/vim-cucumber.git'
-Plug 'https://github.com/tpope/vim-haml.git'
 Plug 'https://github.com/tpope/vim-rails.git'
 Plug 'https://github.com/tpope/vim-rake.git'
-Plug 'https://github.com/slim-template/vim-slim.git'
 
 " Initialize plugin system
 call plug#end()

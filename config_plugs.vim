@@ -201,6 +201,11 @@ let g:grepper.tools = ['git', 'rg', 'ag']
 let g:rustfmt_autosave = 1
 " ....................................................................... }}}1
 
+" vim-polyglot  ......................................................... {{{1
+let g:polyglot_disabled = ['rust', 'go']
+let g:vim_json_syntax_conceal = 1
+" ....................................................................... }}}1
+
 " EasyMotion  ........................................................... {{{1
 
 let g:EasyMotion_smartcase = 1
@@ -465,12 +470,6 @@ au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-
-
-" vim-markdown
-let g:vim_markdown_fenced_languages = ['html', 'css', 'ruby', 'erb=eruby', 'python', 'bash=sh', 'yaml']
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_toc_autofit = 1
 
 
 " NERDTree-tabs  ........................................................ {{{1
