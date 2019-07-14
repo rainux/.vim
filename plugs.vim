@@ -23,6 +23,10 @@ Plug 'wincent/command-t', { 'do': 'rake make' }
 Plug 'mhinz/vim-grepper'
 
 " General text editing
+Plug 'easymotion/vim-easymotion'
+  Plug 'haya14busa/incsearch.vim'
+  Plug 'haya14busa/incsearch-fuzzy.vim'
+  Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'godlygeek/tabular'        " Align text with :Tabularize command
 
 " Git support
@@ -51,7 +55,6 @@ Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
 
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
-Plug 'https://github.com/Lokaltog/vim-easymotion.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
 " PlugLazy 'DrawIt'
 Plug 'vim-scripts/matrix.vim--Yang'
