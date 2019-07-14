@@ -245,8 +245,11 @@ autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
 " \di \ds           Start/Stop DrawIt
 "
 " splitjoin.vim
-" gS    Split a one-liner into multiple lines
-" gJ    (with the cursor on the first line of a block) Join a block into a single-line statement
+" gS      Split a one-liner into multiple lines
+" gJ      (with the cursor on the first line of a block) Join a block into a single-line statement
+
+" vim-jdaddy
+" gqaj    Pretty prints the JSON construct under the cursor.
 
 " taskpaper.vim
 " \td     Mark task as done

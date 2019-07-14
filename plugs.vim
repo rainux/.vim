@@ -79,6 +79,14 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
   Plug 'cespare/vim-toml'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leafo/moonscript-vim'
+Plug 'ekalinin/Dockerfile.vim'
+" A better JSON for Vim: distinct highlighting of keywords vs values,
+" JSON-specific (non-JS) warnings, quote concealing.
+Plug 'elzr/vim-json'
+" JSON manipulation and pretty printing
+Plug 'tpope/vim-jdaddy'
 " A C-reference manual especially designed for Vim
 Plug 'vim-scripts/CRefVim'
 " This C syntax file is to help developing portable Standard C code.
@@ -115,7 +123,6 @@ Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
-Plug 'https://github.com/kchmck/vim-coffee-script.git'
 Plug 'https://github.com/rainux/vim-vala.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
@@ -135,10 +142,6 @@ Plug 'pangloss/vim-javascript'
         " \ 'unite_sources': ['swift/device', 'swift/developer_dir']
         " \}
 Plug 'mxw/vim-jsx'
-Plug 'leafo/moonscript-vim'
-Plug 'tpope/vim-jdaddy'
-Plug 'elzr/vim-json'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'othree/html5.vim'
 Plug 'justmao945/vim-clang'
 Plug 'othree/html5.vim'
