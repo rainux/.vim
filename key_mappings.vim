@@ -250,6 +250,9 @@ autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
 
 " vim-jdaddy
 " gqaj    Pretty prints the JSON construct under the cursor.
+" =       Use gqaj to pretty print JSON
+au FileType json nmap = gggqaj
+au FileType json vmap = <Esc>gggqaj
 
 " taskpaper.vim
 " \td     Mark task as done

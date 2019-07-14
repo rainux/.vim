@@ -37,6 +37,6 @@ au BufNewFile,BufRead *.txt setf text
 " ActionScript
 au BufNewFile,BufRead *.as setf actionscript
 
-au filetype crontab setlocal nobackup nowritebackup
+au FileType crontab setlocal nobackup nowritebackup
 
 au FileType json syntax match Comment +\/\/.\+$+
