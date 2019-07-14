@@ -130,7 +130,11 @@ if !exists("g:CUR_COLOR_INDEX") || g:CUR_COLOR_INDEX < 0 || g:CUR_COLOR_INDEX >=
   let g:CUR_COLOR_INDEX = 0
 endif
 
-execute 'colorscheme '.s:mycolors[g:CUR_COLOR_INDEX]
+try
+  execute 'colorscheme '.s:mycolors[g:CUR_COLOR_INDEX]
+catch
+  silent! colorscheme slate
+endtry
 
 nnoremap <F8> :call NextColor(1)<CR>
 nnoremap <S-F8> :call NextColor(-1)<CR>
