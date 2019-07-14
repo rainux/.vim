@@ -78,17 +78,17 @@ Plug 'AndrewRadev/splitjoin.vim'
 "
 Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+" This C syntax file is to help developing portable Standard C code.
+Plug 'vim-scripts/std_c.zip'
+" A C-reference manual especially designed for Vim
+Plug 'vim-scripts/CRefVim'
+" JSON manipulation and pretty printing
+Plug 'tpope/vim-jdaddy'
+" NSIS syntax file for NSIS 2.46
+Plug 'vim-scripts/NSIS-syntax-highlighting'
 " A collection of language packs for Vim virtually support all popular
 " programming languages.
 Plug 'sheerun/vim-polyglot'
-" JSON manipulation and pretty printing
-Plug 'tpope/vim-jdaddy'
-" A C-reference manual especially designed for Vim
-Plug 'vim-scripts/CRefVim'
-" This C syntax file is to help developing portable Standard C code.
-Plug 'vim-scripts/std_c.zip'
-" NSIS syntax file for NSIS 2.46
-Plug 'vim-scripts/NSIS-syntax-highlighting'
 " ....................................................................... }}}1
 
 " Productivity tools  ................................................... {{{1
