@@ -76,14 +76,16 @@ function! s:ToggleIsKeyword(char) " ..................................... {{{2
 endfunction " ........................................................... }}}2
 " ,hs   Toggle hlsearch
 map ,hs :set hlsearch!<CR>
-" ,tl   Toggle Tag List
-map ,tl :TagbarToggle<CR>
+" ,sp   Toggle spell check
+map ,sp :set spell!<CR>
 " ,nt   Toggle NERDTreeTabs
 map ,nt :NERDTreeTabsToggle<CR>
 " ,nf   NERDTreeFind
 map ,nf :NERDTreeTabsFind<CR>
-" ,sp   Toggle spell check
-map ,sp :set spell!<CR>
+" ,tl   Toggle Tagbar
+map ,tl :TagbarToggle<CR>
+
+" \be \bt \bs \bv   Toogle Buffer Explorer in various way
 
 " ,fo   Cycle GUI font
 " ,fi   Cycle GUI font in inverse order

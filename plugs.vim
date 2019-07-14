@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's ligh
   Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jlanzarotta/bufexplorer'
 
 " Vim color schemes
 Plug 'rainux/Color-Scheme-Test'
@@ -50,7 +51,6 @@ Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/Lokaltog/vim-easymotion.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
 " PlugLazy 'DrawIt'
-" PlugLazy 'bufexplorer.zip'
 Plug 'vim-scripts/matrix.vim--Yang'
 Plug 'vim-scripts/taskpaper.vim'
 Plug 'vim-scripts/vim2ansi'
