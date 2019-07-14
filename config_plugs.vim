@@ -442,7 +442,7 @@ let g:rails_projections = {
 " Rnavcommand specsupport spec/support              -glob=**/*
 
 
-" vim-go
+" vim-go  ............................................................... {{{1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_fields = 1
@@ -453,24 +453,24 @@ let g:go_highlight_trailing_whitespace_error = 0
 let g:go_fmt_command = "goimports"
 let g:go_auto_sameids = 1
 
-au FileType go nmap ,r <Plug>(go-run)
-au FileType go nmap ,b <Plug>(go-build)
-au FileType go nmap <Leader>tg <Plug>(go-test)
-au FileType go nmap ,ct <Plug>(go-coverage-toggle)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <buffer> ,r <Plug>(go-run)
+au FileType go nmap <buffer> ,b <Plug>(go-build)
+au FileType go nmap <buffer> <Leader>tg <Plug>(go-test)
+au FileType go nmap <buffer> ,ct <Plug>(go-coverage-toggle)
+au FileType go nmap <buffer> <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <buffer> <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <buffer> <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <buffer> <Leader>gd <Plug>(go-doc)
+au FileType go nmap <buffer> <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <buffer> <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <buffer> <Leader>s <Plug>(go-implements)
+au FileType go nmap <buffer> <Leader>i <Plug>(go-info)
+au FileType go nmap <buffer> <Leader>e <Plug>(go-rename)
 au Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 au Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 au Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 au Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
-
+" ....................................................................... }}}1
 
 " NERDTree-tabs  ........................................................ {{{1
 let g:nerdtree_tabs_open_on_gui_startup = 0

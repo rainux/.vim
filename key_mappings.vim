@@ -165,11 +165,11 @@ vmap ,cu        <Plug>NERDCommenterUncomment
 " ....................................................................... }}}1
 
 " Rust development  ..................................................... {{{1
-au FileType rust map ,b  :VimuxRunCommand 'cargo build'<CR>
-au FileType rust map ,r  :CargoRun<CR>
-au FileType rust map ,ta :CargoTestAll<CR>
-au FileType rust map ,tb :CargoUnitTestCurrentFile<CR>
-au FileType rust map ,tf :CargoUnitTestFocused<CR>
+au FileType rust map <buffer> ,b  :VimuxRunCommand 'cargo build'<CR>
+au FileType rust map <buffer> ,r  :CargoRun<CR>
+au FileType rust map <buffer> ,ta :CargoTestAll<CR>
+au FileType rust map <buffer> ,tb :CargoUnitTestCurrentFile<CR>
+au FileType rust map <buffer> ,tf :CargoUnitTestFocused<CR>
 " ....................................................................... }}}1
 
 " Work with vim configurations  ......................................... {{{1
@@ -251,8 +251,8 @@ autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
 " vim-jdaddy
 " gqaj    Pretty prints the JSON construct under the cursor.
 " =       Use gqaj to pretty print JSON
-au FileType json nmap = gggqaj
-au FileType json vmap = <Esc>gggqaj
+au FileType json nmap <buffer> = gggqaj
+au FileType json vmap <buffer> = <Esc>gggqaj
 
 " taskpaper.vim
 " \td     Mark task as done
