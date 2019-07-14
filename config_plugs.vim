@@ -425,10 +425,6 @@ let g:rails_projections = {
 " Rnavcommand specsupport spec/support              -glob=**/*
 
 
-" vim-turbux
-let g:turbux_command_prefix = 'spring'
-
-
 " vim-go
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1

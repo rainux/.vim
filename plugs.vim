@@ -109,7 +109,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
-Plug 'https://github.com/rainux/tslime.vim.git'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
@@ -152,7 +151,6 @@ Plug 'https://github.com/tpope/vim-haml.git'
 Plug 'https://github.com/tpope/vim-rails.git'
 Plug 'https://github.com/tpope/vim-rake.git'
 Plug 'https://github.com/slim-template/vim-slim.git'
-Plug 'https://github.com/rainux/vim-turbux.git'
 
 " Initialize plugin system
 call plug#end()
