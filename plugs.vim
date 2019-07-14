@@ -9,8 +9,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'dbmrq/vim-chalk'          " Better fold markers
 Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
   Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+  Plug 'jistr/vim-nerdtree-tabs'
 
-" Vim schemes
+" Vim color schemes
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 Plug 'rainux/base16-vim'
@@ -42,8 +44,6 @@ Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
 
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/jistr/vim-nerdtree-tabs.git'
 Plug 'https://github.com/Lokaltog/vim-easymotion.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
 " PlugLazy 'DrawIt'

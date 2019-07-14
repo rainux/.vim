@@ -434,9 +434,9 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_toc_autofit = 1
 
 
-" NERDTree
+" NERDTree-tabs  ........................................................ {{{1
 let g:nerdtree_tabs_open_on_gui_startup = 0
-
+" ....................................................................... }}}1
 
 " vim-jsx
 let g:jsx_ext_required = 0
