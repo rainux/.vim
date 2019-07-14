@@ -199,9 +199,6 @@ let g:grepper.tools = ['git', 'rg', 'ag']
 
 " rust.vim  ............................................................. {{{1
 let g:rustfmt_autosave = 1
-au FileType rust nmap ,b  :Cbuild<CR>
-au FileType rust nmap ,r  :Crun<CR>
-au FileType rust nmap ,t  :Ctest<CR>
 " ....................................................................... }}}1
 
 " EasyMotion  ........................................................... {{{1
@@ -273,6 +270,21 @@ let c_comment_strings = 1
 let c_comment_numbers = 1
 let c_comment_types = 1
 let c_comment_date_time = 1
+" ....................................................................... }}}1
+
+" Vimux  ................................................................ {{{1
+let g:VimuxRunnerType = 'window'
+
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
 " ....................................................................... }}}1
 
 " rubycomplete

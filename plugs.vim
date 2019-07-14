@@ -92,6 +92,9 @@ Plug 'vim-scripts/NSIS-syntax-highlighting'
 " This package contains a syntax file and a file-type plugin for the simple
 " format used by the TaskPaper application.
 Plug 'davidoc/taskpaper.vim'
+" Easily interact with tmux from vim.
+Plug 'benmills/vimux'
+  Plug 'jtdowney/vimux-cargo'
 " ....................................................................... }}}1
 
 " Legacy rarely used toy  ............................................... {{{1

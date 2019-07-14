@@ -164,6 +164,14 @@ nmap ,cu        <Plug>NERDCommenterUncomment
 vmap ,cu        <Plug>NERDCommenterUncomment
 " ....................................................................... }}}1
 
+" Rust development  ..................................................... {{{1
+au FileType rust map ,b  :VimuxRunCommand 'cargo build'<CR>
+au FileType rust map ,r  :CargoRun<CR>
+au FileType rust map ,ta :CargoTestAll<CR>
+au FileType rust map ,tb :CargoUnitTestCurrentFile<CR>
+au FileType rust map ,tf :CargoUnitTestFocused<CR>
+" ....................................................................... }}}1
+
 " Work with vim configurations  ......................................... {{{1
 "
 " ,vs   Reload vimrc
