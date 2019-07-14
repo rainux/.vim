@@ -5,54 +5,87 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
-" Vim core feature extension
-Plug 'dbmrq/vim-chalk'          " Better fold markers
-Plug 'vim-airline/vim-airline'  " Lean & mean status/tabline for vim that's light as air
+" Vim core feature extension  ........................................... {{{1
+"
+" Better fold markers
+Plug 'dbmrq/vim-chalk'
+" Lean & mean status/tabline for vim that's light as air
+Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+" The NERDTree is a file system explorer for the Vim editor
 Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
+" Plugin for easily exploring (or browsing) Vim buffers
 Plug 'jlanzarotta/bufexplorer'
+" ....................................................................... }}}1
 
-" Vim color schemes
+" Vim color schemes  .................................................... {{{1
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 Plug 'rainux/base16-vim'
+" ....................................................................... }}}1
 
-" Searchers
+" Searchers  ............................................................ {{{1
+"
+" Fast file navigation with fuzzy search
 Plug 'wincent/command-t', { 'do': 'rake make' }
+" Use your favorite grep tool (ag, ack, git grep, ripgrep, pt, sift, findstr,
+" grep) to start an asynchronous search.
 Plug 'mhinz/vim-grepper'
+" ....................................................................... }}}1
 
-" General text editing
+" General text editing  ................................................. {{{1
+"
+" EasyMotion provides a much simpler way to use some motions in vim.
 Plug 'easymotion/vim-easymotion'
   Plug 'haya14busa/incsearch.vim'
   Plug 'haya14busa/incsearch-fuzzy.vim'
   Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'godlygeek/tabular'        " Align text with :Tabularize command
+" Align text with :Tabularize command
+Plug 'godlygeek/tabular'
+" ....................................................................... }}}1
 
-" Git support
+" Git support  .......................................................... {{{1
+"
+" A Git wrapper so awesome, it should be illegal.
 Plug 'tpope/vim-fugitive'
+" Vim Git runtime files
 Plug 'tpope/vim-git'
+" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 Plug 'airblade/vim-gitgutter'
+" ....................................................................... }}}1
 
-" General programming support
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'xuhdev/SingleCompile'
-Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'AndrewRadev/splitjoin.vim'
-
+" General programming support  .......................................... {{{1
+"
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
+" A Vim plugin for visually displaying indent levels in code
+Plug 'nathanaelkane/vim-indent-guides'
+" A Vim plugin making it more convenient to compile or run a single source file.
+Plug 'xuhdev/SingleCompile'
+" Vim plugin for intensely orgasmic commenting
+Plug 'scrooloose/nerdcommenter'
+" Vim plugin that displays tags in a window, ordered by scope.
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+" A vim plugin that simplifies the transition between multiline and single-line code
+Plug 'AndrewRadev/splitjoin.vim'
+" ....................................................................... }}}1
 
-" Programming languages support
+" Programming languages support  ........................................ {{{1
+"
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
   Plug 'cespare/vim-toml'
+" ....................................................................... }}}1
 
-" Legacy rarely used toy
+" Legacy rarely used toy  ............................................... {{{1
+"
+" Convert highlighted text into ansi control sequence
 Plug 'vim-scripts/vim2ansi'
+" Matrix screensaver for VIM, inspired by Chris Allegretta's cmatrix.
 Plug 'vim-scripts/matrix.vim--Yang'
+" ....................................................................... }}}1
 
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually
@@ -116,3 +149,5 @@ Plug 'https://github.com/rainux/vim-turbux.git'
 
 " Initialize plugin system
 call plug#end()
+
+" vim: set fdm=marker fdl=0:
