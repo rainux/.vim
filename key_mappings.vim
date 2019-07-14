@@ -149,7 +149,7 @@ vmap <Leader>sym :s/[\\]\@<!\(['"]\)\([0-9A-Za-z_$]\+\)\1/:\2/gce<CR>
 nmap <Leader>hash :%s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
 vmap <Leader>hash :s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
 
-" NERD commenter mappings
+" NERD Commenter mappings
 nmap ,cc        <Plug>NERDCommenterComment
 vmap ,cc        <Plug>NERDCommenterComment
 nmap ,c<Space>  <Plug>NERDCommenterToggle

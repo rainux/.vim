@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
 " General programming support
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'xuhdev/SingleCompile'
+Plug 'scrooloose/nerdcommenter'
 
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -59,7 +60,6 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'https://github.com/kchmck/vim-coffee-script.git'
 Plug 'https://github.com/majutsushi/tagbar.git'
 Plug 'https://github.com/rainux/vim-vala.git'
-Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/tpope/vim-abolish.git'
 " endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 " Disabled due to conflict with coc.nvim

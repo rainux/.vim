@@ -235,11 +235,10 @@ let g:ruby_minlines = 200
 let g:ruby_operators = 1
 
 
-" NERD commenter
+" NERD Commenter  ....................................................... {{{1
 let g:NERDDefaultNesting = 1
-let g:NERDShutUp = 1
 let g:NERDSpaceDelims = 1
-
+" ....................................................................... }}}1
 
 " vcscommand
 nmap <Leader>va <Plug>VCSAdd
