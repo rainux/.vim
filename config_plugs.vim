@@ -293,24 +293,6 @@ let g:NERDDefaultNesting = 1
 let g:NERDSpaceDelims = 1
 " ....................................................................... }}}1
 
-" vcscommand
-nmap <Leader>va <Plug>VCSAdd
-nmap <Leader>vn <Plug>VCSAnnotate
-nmap <Leader>vG <Plug>VCSClearAndGotoOriginal
-nmap <Leader>vc <Plug>VCSCommit
-nmap <Leader>vD <Plug>VCSDelete
-nmap <Leader>vd <Plug>VCSDiff
-nmap <Leader>vg <Plug>VCSGotoOriginal
-nmap <Leader>vi <Plug>VCSInfo
-nmap <Leader>vL <Plug>VCSLock
-nmap <Leader>vl <Plug>VCSLog
-nmap <Leader>vq <Plug>VCSRevert
-nmap <Leader>vr <Plug>VCSReview
-nmap <Leader>vs <Plug>VCSStatus
-nmap <Leader>vU <Plug>VCSUnlock
-nmap <Leader>vu <Plug>VCSUpdate
-nmap <Leader>vv <Plug>VCSVimDiff
-
 
 " surround
 "
@@ -338,9 +320,6 @@ let g:tagbar_type_coffee = {
       \ 'sort': 0
       \ }
 " ....................................................................... }}}1
-
-" po.vim
-let maplocalleader = ','
 
 
 " Netrw

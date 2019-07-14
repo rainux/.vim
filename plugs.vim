@@ -50,6 +50,10 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
   Plug 'cespare/vim-toml'
 
+" Legacy rarely used toy
+Plug 'vim-scripts/vim2ansi'
+Plug 'vim-scripts/matrix.vim--Yang'
+
 " ===========================================================
 " Bellow are historical plugs that need to be tidied manually
 
@@ -57,9 +61,7 @@ Plug 'rust-lang/rust.vim', { 'for': ['rust', 'toml'] }
 Plug 'https://github.com/kana/vim-textobj-user.git'
 Plug 'https://github.com/rainux/tslime.vim.git'
 " PlugLazy 'DrawIt'
-Plug 'vim-scripts/matrix.vim--Yang'
 Plug 'vim-scripts/taskpaper.vim'
-Plug 'vim-scripts/vim2ansi'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
@@ -76,15 +78,6 @@ Plug 'https://github.com/tpope/vim-repeat.git'
 " Plug 'https://github.com/tpope/vim-speeddating.git', {'bind': 0, 'tags': ['date', 'slow']}
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/tpope/vim-unimpaired.git'
-Plug 'vim-scripts/vcscommand.vim'
-" PlugLazy 'Valloric/YouCompleteMe', {
-     " \ 'build'      : {
-        " \ 'mac'     : './install.py',
-        " \ 'unix'    : './install.py',
-        " \ 'windows' : 'install.py',
-        " \ 'cygwin'  : './install.py'
-        " \ }
-     " \ }
 Plug 'vim-scripts/CRefVim'
 Plug 'vim-scripts/NSIS-syntax-highlighting'
 Plug 'pangloss/vim-javascript'
@@ -95,7 +88,6 @@ Plug 'vim-scripts/jQuery'
 " PlugLazy 'lua-support'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/std_c.zip'
-Plug 'vim-scripts/po.vim--Jelenak'
 " Plug 'kballard/vim-swift', {
         " \ 'filetypes': 'swift',
         " \ 'unite_sources': ['swift/device', 'swift/developer_dir']
