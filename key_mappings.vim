@@ -165,11 +165,15 @@ vmap ,cu        <Plug>NERDCommenterUncomment
 " ....................................................................... }}}1
 
 " Rust development  ..................................................... {{{1
-au FileType rust map <buffer> ,b  :VimuxRunCommand 'cargo build'<CR>
-au FileType rust map <buffer> ,r  :CargoRun<CR>
-au FileType rust map <buffer> ,ta :CargoTestAll<CR>
-au FileType rust map <buffer> ,tb :CargoUnitTestCurrentFile<CR>
-au FileType rust map <buffer> ,tf :CargoUnitTestFocused<CR>
+"
+" To work with a Rust project, it's more conveninent to create a global
+" mapping instead of buffer local mapping.
+au FileType rust map ,cb :VimuxRunCommand 'cargo bench'<CR>
+au FileType rust map ,b  :VimuxRunCommand 'cargo build'<CR>
+au FileType rust map ,r  :CargoRun<CR>
+au FileType rust map ,ta :CargoTestAll<CR>
+au FileType rust map ,tb :CargoUnitTestCurrentFile<CR>
+au FileType rust map ,tf :CargoUnitTestFocused<CR>
 " ....................................................................... }}}1
 
 " Work with vim configurations  ......................................... {{{1
