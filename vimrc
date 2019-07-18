@@ -216,6 +216,7 @@ set backspace=indent,eol,start
 set cmdheight=2
 set colorcolumn=120
 set completeopt=menuone,longest,preview
+set diffopt=filler,iwhite
 set directory=~/.vim/tmp,/var/tmp,/tmp
 set fileformats=unix,dos
 set foldcolumn=4
@@ -264,8 +265,6 @@ set virtualedit=block
 set visualbell
 set wildmenu
 set wildmode=list:longest,full
-
-set diffopt=filler,iwhite,vertical
 
 set foldtext=MyFoldText()
 function! MyFoldText()
