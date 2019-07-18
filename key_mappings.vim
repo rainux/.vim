@@ -227,6 +227,8 @@ nnoremap <expr> q &diff ? '<C-W>h:q<CR>' : 'q'
 autocmd FileType help nnoremap <buffer> q :q<CR>
 " Close fugitive window
 autocmd FileType fugitive,git,gitcommit nnoremap <buffer> q :q<CR>
+" Close QuickFix & Location window
+autocmd FileType qf nnoremap <buffer> q :q<CR>
 " ....................................................................... }}}1
 
 " Default mappings coming from plugins  ................................. {{{1
