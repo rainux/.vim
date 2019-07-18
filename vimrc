@@ -227,7 +227,6 @@ set guioptions-=m " Remove menu
 set guioptions-=r " Remove scrollbar
 set guioptions-=T " Remove toolbar
 set grepprg=grep\ -nH\ $*
-set helplang=CN
 set history=50
 set ignorecase smartcase smartcase
 set incsearch
