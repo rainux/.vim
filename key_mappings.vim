@@ -197,6 +197,9 @@ nmap ,gac :Gcommit --amend<CR>
 nmap ,gb  :Gblame<CR>
 nmap ,gc  :Gcommit<CR>
 nmap ,gd  :Gvdiff<CR>
+nmap ,gi  :Gsplit! diff<CR><C-W>_
+nmap ,gk  :Gsplit! diff --cached<CR><C-W>_
+nmap ,gl  :Gllog<CR>
 nmap ,ge  :Gedit<CR>
 nmap ,gg  :Ggrep<Space>
 nmap ,gr  :Gread<CR>
@@ -236,7 +239,7 @@ nnoremap <expr> q &diff ? '<C-W>h:q<CR>' : 'q'
 " Close Vim help window
 autocmd FileType help nnoremap <buffer> q :q<CR>
 " Close fugitive window
-autocmd FileType fugitive,git nnoremap <buffer> q :q<CR>
+autocmd FileType fugitive,git,gitcommit nnoremap <buffer> q :q<CR>
 " ....................................................................... }}}1
 
 " Default mappings coming from plugins  ................................. {{{1
