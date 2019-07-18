@@ -97,21 +97,6 @@ map ,tl :TagbarToggle<CR>
 nmap ,* :%s/<C-R><C-W>/
 " ,rg   Search in files via rg
 nmap ,rg :execute 'Grepper -noprompt -tool rg -query ' . input("Rg search for pattern: ", "<C-R><C-W>")<CR>
-" ,tt   Activate Command-T
-function! g:ProjectRoot() " ............................................. {{{2
-  if exists('b:rails_root')
-    return b:rails_root
-  elseif exists('b:bundler_root')
-    return b:bundler_root
-  elseif exists('b:rake_root')
-    return b:rake_root
-  elseif exists('b:git_dir')
-    return fnamemodify(b:git_dir, ':p:h:h')
-  endif
-endfunction " ........................................................... }}}2
-nmap ,tt :execute 'CommandT ' . fnameescape(g:ProjectRoot())<CR>
-" ,tb   Activate Command-T with files already loaded to buffers
-nmap ,tb :CommandTBuffer<CR>
 " ....................................................................... }}}1
 
 " Work with code  ....................................................... {{{1
@@ -243,6 +228,8 @@ autocmd FileType fugitive,git,gitcommit nnoremap <buffer> q :q<CR>
 " ....................................................................... }}}1
 
 " Default mappings coming from plugins  ................................. {{{1
+"
+" CTRL-P            Open CtrlP prompt in find file mode
 "
 " \be \bt \bs \bv   Toogle Buffer Explorer in various way
 "

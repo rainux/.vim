@@ -27,8 +27,8 @@ Plug 'rainux/base16-vim'
 
 " Searchers  ............................................................ {{{1
 "
-" Fast file navigation with fuzzy search
-Plug 'wincent/command-t', { 'do': 'rake make' }
+" Fuzzy file, buffer, mru, tag, etc finder
+Plug 'ctrlpvim/ctrlp.vim'
 " Use your favorite grep tool (ag, ack, git grep, ripgrep, pt, sift, findstr,
 " grep) to start an asynchronous search.
 Plug 'mhinz/vim-grepper'
@@ -116,7 +116,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 
 " Generally Useful:
 Plug 'https://github.com/kana/vim-textobj-user.git'
-Plug 'ctrlpvim/ctrlp.vim'
 
 " Programming:
 Plug 'https://github.com/tpope/vim-abolish.git'
