@@ -292,6 +292,49 @@ map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vx :VimuxInterruptRunner<CR>
 " ....................................................................... }}}1
 
+" CtrlP  ................................................................ {{{1
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/](target)$',
+      \ }
+" ....................................................................... }}}1
+
+" fzf  .................................................................. {{{1
+"
+let g:fzf_buffers_jump = 1
+function! s:GotoOrOpen(command, ...) " .................................. {{{2
+  for file in a:000
+    if a:command == 'e'
+      exec 'e ' . file
+    else
+      exec "tab drop " . file
+    endif
+  endfor
+endfunction " ........................................................... }}}2
+command! -nargs=+ GotoOrOpen call s:GotoOrOpen(<f-args>)
+let g:fzf_action = {
+      \ 'Ctrl-T': 'GotoOrOpen tab',
+      \ 'Ctrl-X': 'split',
+      \ 'Ctrl-V': 'vsplit' }
+
+" Mapping selecting mappings
+nmap <Leader><Tab> <Plug>(fzf-maps-n)
+xmap <Leader><Tab> <Plug>(fzf-maps-x)
+omap <Leader><Tab> <Plug>(fzf-maps-o)
+" Insert mode completion
+imap <C-X><C-K> <Plug>(fzf-complete-word)
+imap <C-X><C-F> <Plug>(fzf-complete-path)
+imap <C-X><C-J> <Plug>(fzf-complete-file-ag)
+imap <C-X><C-L> <Plug>(fzf-complete-line)
+
+" :Rg with file content preview
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+" ....................................................................... }}}1
+
 " Projectionist  ........................................................ {{{1
 let g:projectionist_heuristics = {
       \ "Cargo.toml": {

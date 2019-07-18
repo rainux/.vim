@@ -96,7 +96,9 @@ map ,tl :TagbarToggle<CR>
 " ,*    Substitute(Replace)
 nmap ,* :%s/<C-R><C-W>/
 " ,rg   Search in files via rg
-nmap ,rg :execute 'Grepper -noprompt -tool rg -query ' . input("Rg search for pattern: ", "<C-R><C-W>")<CR>
+nmap ,rg :execute 'Rg ' . input("Rg search for pattern: ", "<C-R><C-W>")<CR>
+" ,fz   Fuzzy find files in current project
+nmap ,fz :execute 'FZF '.projectionist#path()<CR>
 " ....................................................................... }}}1
 
 " Work with code  ....................................................... {{{1
