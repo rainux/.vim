@@ -32,15 +32,15 @@ Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf'
 " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'ctrlpvim/ctrlp.vim'
+" Improved incremental searching for Vim
+Plug 'haya14busa/incsearch.vim'
+  Plug 'haya14busa/incsearch-fuzzy.vim'
 " ....................................................................... }}}1
 
 " General text editing  ................................................. {{{1
 "
 " EasyMotion provides a much simpler way to use some motions in vim.
 Plug 'easymotion/vim-easymotion'
-  Plug 'haya14busa/incsearch.vim'
-  Plug 'haya14busa/incsearch-fuzzy.vim'
-  Plug 'haya14busa/incsearch-easymotion.vim'
 " Align text with :Tabularize command
 Plug 'godlygeek/tabular'
 " ....................................................................... }}}1
