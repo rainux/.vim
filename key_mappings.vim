@@ -199,7 +199,6 @@ nmap ,gc  :Gcommit<CR>
 nmap ,gd  :Gvdiff<CR>
 nmap ,ge  :Gedit<CR>
 nmap ,gg  :Ggrep<Space>
-nmap ,gq  :Git checkout HEAD %<CR>
 nmap ,gr  :Gread<CR>
 nmap ,gs  :Gstatus<CR>
 nmap ,gw  :Gwrite<CR>
