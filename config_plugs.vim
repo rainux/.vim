@@ -292,6 +292,23 @@ map <Leader>vq :VimuxCloseRunner<CR>
 map <Leader>vx :VimuxInterruptRunner<CR>
 " ....................................................................... }}}1
 
+" Projectionist  ........................................................ {{{1
+let g:projectionist_heuristics = {
+      \ "Cargo.toml": {
+      \   "Cargo.toml": {
+      \     "alternate": "Cargo.lock",
+      \     "type": "cargo",
+      \   },
+      \   "Cargo.lock": {
+      \     "alternate": "Cargo.toml",
+      \   },
+      \   "src/*.rs": {"type": "rs"},
+      \ },
+      \ ".git/config": {
+      \   ".git/config": {"type": "git"},
+      \ }}
+" ....................................................................... }}}1
+
 " rubycomplete
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1

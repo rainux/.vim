@@ -57,6 +57,8 @@ Plug 'airblade/vim-gitgutter'
 
 " General programming support  .......................................... {{{1
 "
+" Granular project configuration
+Plug 'tpope/vim-projectionist'
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
