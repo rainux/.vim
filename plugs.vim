@@ -32,9 +32,6 @@ Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf'
 " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'ctrlpvim/ctrlp.vim'
-" Use your favorite grep tool (ag, ack, git grep, ripgrep, pt, sift, findstr,
-" grep) to start an asynchronous search.
-Plug 'mhinz/vim-grepper'
 " ....................................................................... }}}1
 
 " General text editing  ................................................. {{{1
