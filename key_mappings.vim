@@ -99,6 +99,8 @@ nmap ,* :%s/<C-R><C-W>/
 nmap ,rg :execute 'Rg ' . input("Rg search for pattern: ", "<C-R><C-W>")<CR>
 " ,fz   Fuzzy find files in current project
 nmap ,fz :execute 'FZF '.projectionist#path()<CR>
+" ,cl   Change colorscheme via fzf.vim
+nmap ,cl :Colors<CR>
 " ....................................................................... }}}1
 
 " Work with code  ....................................................... {{{1

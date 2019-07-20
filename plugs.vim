@@ -23,6 +23,8 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 Plug 'rainux/base16-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 " ....................................................................... }}}1
 
 " Searchers  ............................................................ {{{1

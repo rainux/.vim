@@ -30,13 +30,13 @@ au BufNewFile,BufRead *.desk,*.DESK setf dosini
 au BufNewFile,BufRead *.dti,*.DTI setf dosini
 " Delphi .BPG = Makefile
 au BufNewFile,BufRead *.bpg,*.BPG setf make|setlocal makeprg=make\ -f\ %
-
 " Plane text file
 au BufNewFile,BufRead *.txt setf text
-
 " ActionScript
 au BufNewFile,BufRead *.as setf actionscript
 
 au FileType crontab setlocal nobackup nowritebackup
 
 au FileType json syntax match Comment +\/\/.\+$+
+
+au FileType vim colorscheme onedark
