@@ -171,7 +171,7 @@ if has('autocmd')
 
       " Change to directory of current file automatically when current file is not
       " on remote server nor inside an archive file like .zip/.tgz
-      if bufname('%') !~ '::\|://'
+      if bufname('%') !~ '::\|://' && projectionist#path() == ''
         lcd %:p:h
       endif
     endfunction
