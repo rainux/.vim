@@ -57,13 +57,21 @@ Plug 'tpope/vim-git'
 Plug 'airblade/vim-gitgutter'
 " ....................................................................... }}}1
 
-" General programming support  .......................................... {{{1
+" IDE like experience  .................................................. {{{1
 "
 " Granular project configuration
 Plug 'tpope/vim-projectionist'
+" Asynchronous build and test dispatcher
+Plug 'tpope/vim-dispatch'
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
+" Vim plugin that displays tags in a window, ordered by scope.
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+" ....................................................................... }}}1
+
+" General programming support  .......................................... {{{1
+"
 " Extended % matching for HTML, LaTeX, and many other languages
 Plug 'vim-scripts/matchit.zip'
 " A Vim plugin for visually displaying indent levels in code
@@ -72,8 +80,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'xuhdev/SingleCompile'
 " Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/nerdcommenter'
-" Vim plugin that displays tags in a window, ordered by scope.
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 " A vim plugin that simplifies the transition between multiline and single-line code
 Plug 'AndrewRadev/splitjoin.vim'
 " ....................................................................... }}}1

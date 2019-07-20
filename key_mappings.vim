@@ -110,9 +110,20 @@ nmap ,sr  :SCCompileRun<CR>
 " ,sc     Compile with SingleCompile
 nmap ,sc  :SCCompile<CR>
 
-" ,> ,< Jump to next or prev error
+" ,cw ,cq   Open and close quickfix window
+nmap ,cw  :cwindow<CR>
+nmap ,cq  :cclose<CR>
+" ,lw ,lq   Open and close location window
+nmap ,lw  :lwindow<CR>
+nmap ,lq  :lclose<CR>
+" ,, ,. ,m  Jump to current, next or prev error in quickfix list
+nmap ,, :cc<CR>
+nmap ,. :cnext<CR>
+nmap ,m :cNext<CR>
+" ,< ,> ,M  Jump to current, next or prev error in location list
+nmap ,< :ll<CR>
 nmap ,> :lnext<CR>
-nmap ,< :lNext<CR>
+nmap ,M :lNext<CR>
 
 " ""  List contents of all registers (that typically contain pasteable text).
 nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
@@ -158,8 +169,11 @@ vmap ,cu        <Plug>NERDCommenterUncomment
 " To work with a Rust project, it's more conveninent to create a global
 " mapping instead of buffer local mapping.
 au FileType rust map ,cb :VimuxRunCommand 'cargo bench'<CR>
-au FileType rust map ,b  :VimuxRunCommand 'cargo build'<CR>
+au FileType rust map ,b  :Make build<CR>
 au FileType rust map ,r  :CargoRun<CR>
+au FileType rust map ,ri :VimuxInterruptRunner<CR>
+au FileType rust map ,rp :VimuxRunCommand 'cargo run -- '<C-B>
+au FileType rust map ,rl :VimuxRunLastCommand<CR>
 au FileType rust map ,ta :CargoTestAll<CR>
 au FileType rust map ,tb :CargoUnitTestCurrentFile<CR>
 au FileType rust map ,tf :CargoUnitTestFocused<CR>
