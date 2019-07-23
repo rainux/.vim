@@ -15,8 +15,6 @@ Plug 'vim-airline/vim-airline'
 " The NERDTree is a file system explorer for the Vim editor
 Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
-" Plugin for easily exploring (or browsing) Vim buffers
-Plug 'jlanzarotta/bufexplorer'
 " ....................................................................... }}}1
 
 " Vim color schemes  .................................................... {{{1
