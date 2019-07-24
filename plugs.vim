@@ -107,6 +107,10 @@ Plug 'davidoc/taskpaper.vim'
 " Easily interact with tmux from vim.
 Plug 'benmills/vimux'
   Plug 'jtdowney/vimux-cargo'
+" Distraction-free writing in Vim.
+Plug 'junegunn/goyo.vim'
+" Hyperfocus-writing in Vim.
+Plug 'junegunn/limelight.vim'
 " ....................................................................... }}}1
 
 " Legacy rarely used toy  ............................................... {{{1
