@@ -10,4 +10,3 @@ done
 
 echo 'Install plugins...'
 vim -Ec "exec 'PlugInstall' | qa"
-vim -Ec "exec 'CocInstall -sync '.join(g:coc_global_extensions, ' ') | qa"
