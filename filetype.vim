@@ -39,4 +39,4 @@ au FileType crontab setlocal nobackup nowritebackup
 
 au FileType json syntax match Comment +\/\/.\+$+
 
-au FileType vim colorscheme onedark
+au FileType vim if g:PlugInstalled('onedark.vim') | colorscheme onedark | endif

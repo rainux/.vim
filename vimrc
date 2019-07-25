@@ -159,6 +159,7 @@ if has('autocmd')
           \ ]
     let s:indent8_types = ['css', 'gitconfig', 'go', 'taskpaper']
 
+    let s:projectionist_installed = g:PlugInstalled('vim-projectionist')
     function! s:BufEnter()
       " Set indent style for diffent file type
       if index(s:indent2_types, &ft) >= 0
@@ -169,9 +170,12 @@ if has('autocmd')
         call g:ToggleIndentStyle(4)
       endif
 
-      " Change to directory of current file automatically when current file is not
-      " on remote server nor inside an archive file like .zip/.tgz
-      if bufname('%') !~ '::\|://' && projectionist#path() == ''
+      " Change to directory of current file automatically when current file is not:
+      "   - On remote server
+      "   - Inside an archive file like .zip/.tgz
+      "   - Inside a project
+      if bufname('%') =~ '::\|://' || (s:projectionist_installed && projectionist#path() != '')
+      else
         lcd %:p:h
       endif
     endfunction

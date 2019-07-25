@@ -154,4 +154,11 @@ Plug 'https://github.com/tpope/vim-rake.git'
 " Initialize plugin system
 call plug#end()
 
+" Function to check if a plug installed by vim-plug  .................... {{{1
+function g:PlugInstalled(name)
+  let plug = get(g:plugs, a:name, {})
+  return isdirectory(get(plug, 'dir'))
+endfunction
+" ....................................................................... }}}1
+
 " vim: set fdm=marker fdl=0:
