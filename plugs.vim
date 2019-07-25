@@ -18,11 +18,9 @@ Plug 'scrooloose/nerdtree'
 " ....................................................................... }}}1
 
 " Vim color schemes  .................................................... {{{1
-let g:plug_url_format = 'git@github.com:%s.git'
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 Plug 'rainux/base16-vim'
-unlet g:plug_url_format
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 " ....................................................................... }}}1
