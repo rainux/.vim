@@ -193,6 +193,8 @@ nmap ,vep :tabe $HOME/.vim/plugs.vim<CR>
 nmap ,pi  :source $HOME/.vim/plugs.vim<CR>:PlugInstall<CR>
 " ,pc   Clean uninstalled/invalid plugs
 nmap ,pc  :source $HOME/.vim/plugs.vim<CR>:PlugClean<CR>
+" ,pu   Upgrade plugs and vim-plug
+nmap ,pu  :source $HOME/.vim/plugs.vim<CR>:PlugUpdate<CR>:PlugUpgrade<CR>
 " ....................................................................... }}}1
 
 " Git related keymappings  .............................................. {{{1
