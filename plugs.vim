@@ -41,8 +41,8 @@ Plug 'haya14busa/incsearch.vim'
 "
 " EasyMotion provides a much simpler way to use some motions in vim.
 Plug 'easymotion/vim-easymotion'
-" Align text with :Tabularize command
-Plug 'godlygeek/tabular'
+" A simple, easy-to-use Vim alignment plugin.
+Plug 'junegunn/vim-easy-align'
 " ....................................................................... }}}1
 
 " Git support  .......................................................... {{{1

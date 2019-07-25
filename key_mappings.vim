@@ -105,6 +105,14 @@ nmap ,fb :Buffers<CR>
 nmap ,cl :Colors<CR>
 " ....................................................................... }}}1
 
+" General text editing  ................................................. {{{1
+"
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" ....................................................................... }}}1
+
 " Work with code  ....................................................... {{{1
 
 " ,sr     Compile and Run with SingleCompile
@@ -200,9 +208,9 @@ nmap ,pu  :source $HOME/.vim/plugs.vim<CR>:PlugUpdate<CR>:PlugUpgrade<CR>
 " Git related keymappings  .............................................. {{{1
 "
 " vim-fugitive
-nmap ,gac :Gcommit --amend<CR>
+nmap ,gac :Gcommit --amend --verbose<CR>
 nmap ,gb  :Gblame<CR>
-nmap ,gc  :Gcommit<CR>
+nmap ,gc  :Gcommit --verbose<CR>
 nmap ,gd  :Gvdiff<CR>
 nmap ,gi  :Gsplit! diff<CR><C-W>_
 nmap ,gk  :Gsplit! diff --cached<CR><C-W>_
