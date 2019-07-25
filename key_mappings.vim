@@ -203,6 +203,8 @@ nmap ,pi  :source $HOME/.vim/plugs.vim<CR>:PlugInstall<CR>
 nmap ,pc  :source $HOME/.vim/plugs.vim<CR>:PlugClean<CR>
 " ,pu   Upgrade plugs and vim-plug
 nmap ,pu  :source $HOME/.vim/plugs.vim<CR>:PlugUpdate<CR>:PlugUpgrade<CR>
+" ,ph   Get help of plugs
+nmap ,ph  :PlugHelp<CR>
 " ....................................................................... }}}1
 
 " Git related keymappings  .............................................. {{{1

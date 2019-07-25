@@ -347,6 +347,24 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " ....................................................................... }}}1
 
+" vim-plug  ............................................................. {{{1
+function! s:plug_help_sink(line) " ...................................... {{{2
+  let dir = g:plugs[a:line].dir
+  for pat in ['doc/*.txt', 'README.md']
+    let match = get(split(globpath(dir, pat), "\n"), 0, '')
+    if len(match)
+      execute 'tabedit' match
+      return
+    endif
+  endfor
+  tabnew
+  execute 'Explore' dir
+endfunction " ........................................................... }}}2
+command! PlugHelp call fzf#run(fzf#wrap({
+      \ 'source': sort(keys(g:plugs)),
+      \ 'sink': function('s:plug_help_sink')}))
+" ....................................................................... }}}1
+
 " rubycomplete
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
