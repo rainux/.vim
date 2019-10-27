@@ -170,13 +170,15 @@ if has('autocmd')
         call g:ToggleIndentStyle(4)
       endif
 
-      " Change to directory of current file automatically when current file is not:
+      " Change to directory of current file/project automatically when current file is not:
       "   - On remote server
       "   - Inside an archive file like .zip/.tgz
-      "   - Inside a project
-      if bufname('%') =~ '::\|://' || (s:projectionist_installed && projectionist#path() != '')
-      else
-        lcd %:p:h
+      if bufname('%') !~ '::\|://'
+        if (s:projectionist_installed && projectionist#path() != '')
+          execute 'lcd ' . projectionist#path()
+        else
+          lcd %:p:h
+        endif
       endif
     endfunction
 
