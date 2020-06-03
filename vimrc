@@ -155,7 +155,8 @@ if has('autocmd')
 
     let s:indent2_types = [
           \ 'cucumber', 'eruby', 'ruby', 'yaml', 'slim', 'haml', 'sass', 'delphi', 'html', 'xhtml',
-          \ 'javascript', 'javascript.jsx', 'json', 'coffee', 'lisp', 'nsis', 'vim', 'puppet', 'scala'
+          \ 'javascript', 'javascript.jsx', 'json', 'coffee', 'lisp', 'nsis', 'vim', 'puppet', 'scala',
+          \ 'vue'
           \ ]
     let s:indent8_types = ['css', 'gitconfig', 'go', 'taskpaper']
 

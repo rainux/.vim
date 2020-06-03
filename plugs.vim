@@ -71,7 +71,7 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 " General programming support  .......................................... {{{1
 "
 " Extended % matching for HTML, LaTeX, and many other languages
-Plug 'vim-scripts/matchit.zip'
+Plug 'andymass/vim-matchup'
 " A Vim plugin for visually displaying indent levels in code
 Plug 'nathanaelkane/vim-indent-guides'
 " A Vim plugin making it more convenient to compile or run a single source file.

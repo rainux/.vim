@@ -381,6 +381,27 @@ let g:ruby_operators = 1
 " NERD Commenter  ....................................................... {{{1
 let g:NERDDefaultNesting = 1
 let g:NERDSpaceDelims = 1
+
+" Correctly comment .vue files 
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
 " ....................................................................... }}}1
 
 
@@ -552,6 +573,9 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 " vim-jsx
 let g:jsx_ext_required = 0
 
+" vim-vue  .............................................................. {{{1
+let g:vue_pre_processors = 'detect_on_enter'
+" ....................................................................... }}}1
 
 " vim-table-model
 let g:table_mode_corner='|'
