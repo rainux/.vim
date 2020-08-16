@@ -4,6 +4,7 @@ if has("gui_macvim")
         \ "Monaco:h18",
         \ "Monoid:h18",
         \ "Fira_Code:h22",
+        \ "Cascadia_Code_PL:h22",
         \ "Hasklig:h22",
         \ ]
 
@@ -11,10 +12,12 @@ if has("gui_macvim")
         \ [140, 38],
         \ [140, 38],
         \ [140, 38],
+        \ [140, 38],
         \ [140, 35],
         \ ]
 
   let s:WinPosList  = [
+        \ [0, 0],
         \ [0, 0],
         \ [0, 0],
         \ [0, 0],

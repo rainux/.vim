@@ -97,7 +97,9 @@ map ,tl :TagbarToggle<CR>
 nmap ,* :%s/<C-R><C-W>/
 " ,rg   Search in files via rg
 nmap ,rg :execute 'Rg ' . input("Rg search for pattern: ", "<C-R><C-W>")<CR>
+" CTRL-N
 " ,fz   Fuzzy find files in current project
+nmap <C-N> :execute 'FZF '.projectionist#path()<CR>
 nmap ,fz :execute 'FZF '.projectionist#path()<CR>
 " ,fb   Fuzzy find open buffers
 nmap ,fb :Buffers<CR>
@@ -178,15 +180,18 @@ vmap ,cu        <Plug>NERDCommenterUncomment
 "
 " To work with a Rust project, it's more conveninent to create a global
 " mapping instead of buffer local mapping.
-au FileType rust map ,cb :VimuxRunCommand 'cargo bench'<CR>
-au FileType rust map ,b  :Make build<CR>
-au FileType rust map ,r  :CargoRun<CR>
+au FileType rust map ,be :VimuxRunCommand 'cargo bench'<CR>
+au FileType rust map ,bb :Make build<CR>
+au FileType rust map ,bc :Make clippy<CR>
+au FileType rust map ,rn :VimuxInterruptRunner<CR>:CargoRun<CR>
+au FileType rust map ,rr :VimuxInterruptRunner<CR>:VimuxRunLastCommand<CR>
 au FileType rust map ,ri :VimuxInterruptRunner<CR>
 au FileType rust map ,rp :VimuxRunCommand 'cargo run -- '<C-B>
 au FileType rust map ,rl :VimuxRunLastCommand<CR>
 au FileType rust map ,ta :CargoTestAll<CR>
 au FileType rust map ,tb :CargoUnitTestCurrentFile<CR>
 au FileType rust map ,tf :CargoUnitTestFocused<CR>
+map ,cd :VimuxRunCommand 'cd '.projectionist#path()<CR>
 " ....................................................................... }}}1
 
 " Work with vim configurations  ......................................... {{{1
@@ -226,12 +231,11 @@ nmap ,gw  :Gwrite<CR>
 " vim-gitgutter
 nmap zg   :GitGutterFold<CR>
 nmap glh  :GitGutterLineHighlightsToggle<CR>
-nmap glh  :GitGutterLineHighlightsToggle<CR>
-nmap ]c   <Plug>GitGutterNextHunk
-nmap [c   <Plug>GitGutterPrevHunk
-nmap ghs  <Plug>GitGutterStageHunk
-nmap ghu  <Plug>GitGutterUndoHunk
-nmap ghp  <Plug>GitGutterPreviewHunk
+nmap ]c   <Plug>(GitGutterNextHunk)
+nmap [c   <Plug>(GitGutterPrevHunk)
+nmap ghs  <Plug>(GitGutterStageHunk)
+nmap ghu  <Plug>(GitGutterUndoHunk)
+nmap ghp  <Plug>(GitGutterPreviewHunk)
 
 " coc-git
 " gci     Show chunk diff at current position
@@ -252,7 +256,7 @@ nnoremap <expr> <C-K> &diff ? '[c' : '<C-W>k'
 " Close various informative/minor window with `q`  ...................... {{{1
 "
 " Close left window (original file) in diff mode
-nnoremap <expr> q &diff ? '<C-W>h:q<CR>' : 'q'
+nnoremap <expr> q &diff ? ':diffoff<CR><C-W>h:q<CR>' : 'q'
 " Close Vim help window
 autocmd FileType help nnoremap <buffer> q :q<CR>
 " Close fugitive window

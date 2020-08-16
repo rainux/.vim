@@ -1,5 +1,8 @@
 {
+  "coc.preferences.useQuickfixForLocations": true,
   "suggest.languageSourcePriority": 200,
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "vue"],
+  "eslint.autoFixOnSave": true,
   "languageserver": {
     "ccls": {
       "command": "ccls",
@@ -18,6 +21,7 @@
       "filetypes": ["go"]
     }
   },
+  "snippets.userSnippetsDirectory": "/Users/rainux/.vim/coc/ultisnips",
   "snippets.ultisnips.directories": [
     "gosnippets/UltiSnips"
   ],

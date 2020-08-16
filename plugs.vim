@@ -15,12 +15,16 @@ Plug 'vim-airline/vim-airline'
 " The NERDTree is a file system explorer for the Vim editor
 Plug 'scrooloose/nerdtree'
   Plug 'jistr/vim-nerdtree-tabs'
+" Helpers for UNIX
+Plug 'tpope/vim-eunuch'
 " ....................................................................... }}}1
 
 " Vim color schemes  .................................................... {{{1
+let g:plug_url_format = 'git@github.com:%s.git'
 Plug 'rainux/Color-Scheme-Test'
 Plug 'rainux/vim-desert-warm-256'
 Plug 'rainux/base16-vim'
+unlet g:plug_url_format
 Plug 'joshdick/onedark.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 " ....................................................................... }}}1
@@ -64,8 +68,14 @@ Plug 'tpope/vim-dispatch'
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'honza/vim-snippets'
+" Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support
+Plug 'dense-analysis/ale'
 " Vim plugin that displays tags in a window, ordered by scope.
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
+" Enforce coding style defined in .editorconfig file automatically.
+Plug 'editorconfig/editorconfig-vim'
+" The fancy start screen for Vim.
+Plug 'mhinz/vim-startify'
 " ....................................................................... }}}1
 
 " General programming support  .......................................... {{{1

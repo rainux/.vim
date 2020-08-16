@@ -161,6 +161,7 @@ if has('autocmd')
     let s:indent8_types = ['css', 'gitconfig', 'go', 'taskpaper']
 
     let s:projectionist_installed = g:PlugInstalled('vim-projectionist')
+    let s:lcd_black_list = ['/Users/rainux/Dropbox/home']
     function! s:BufEnter()
       " Set indent style for diffent file type
       if index(s:indent2_types, &ft) >= 0
@@ -175,7 +176,7 @@ if has('autocmd')
       "   - On remote server
       "   - Inside an archive file like .zip/.tgz
       if bufname('%') !~ '::\|://'
-        if (s:projectionist_installed && projectionist#path() != '')
+        if (s:projectionist_installed && projectionist#path() != '' && index(s:lcd_black_list, projectionist#path()) < 0)
           execute 'lcd ' . projectionist#path()
         else
           lcd %:p:h
@@ -229,7 +230,7 @@ set fileformats=unix,dos
 set foldcolumn=4
 set foldlevelstart=99
 set foldmethod=indent
-set guicursor=a:blinkon0
+set guicursor=a:block-blinkon0
 set guioptions-=m " Remove menu
 set guioptions-=r " Remove scrollbar
 set guioptions-=T " Remove toolbar
