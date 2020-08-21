@@ -15,6 +15,8 @@ let s:mycolors = [
       \ 'onedark',
       \ 'palenight',
       \ 'base16-gruvbox-dark-hard',
+      \ 'base16-tomorrow-night',
+      \ 'base16-tomorrow-night-eighties',
       \ 'base16-zenburn',
       \ 'base16-eighties',
       \ 'base16-railscasts',

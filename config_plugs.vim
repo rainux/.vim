@@ -407,12 +407,19 @@ let g:startify_session_persistence = 1
 " ....................................................................... }}}1
 
 " ALE  .................................................................. {{{1
-" let g:ale_linters_explicit = 1
+
+" Disable linters already available in coc.nvim
+" let g:ale_linters = {
+      " \ 'javascript': [],
+      " \ 'typescript': [],
+      " \ 'vue': [],
+      " \ }
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
-\   'vue': ['prettier'],
-\   'css': ['prettier'],
-\}
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier'],
+      \ 'vue': ['prettier'],
+      \ 'css': ['prettier'],
+      \ }
 let g:ale_fix_on_save = 1
 " ....................................................................... }}}1
 
