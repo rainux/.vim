@@ -60,8 +60,8 @@ if has("gui_win32")
   " Define a font list for Win32 with corresponding winsize and winpos arguments list
   let s:GuiFontList = [
         \ "Monaco:h10",
-        \ "Lucida_Console:h14",
-        \ "Consolas:h14"
+        \ "Lucida_Console:h14 Yahei_Mono:h13",
+        \ "Consolas:h14 Yahei_Mono:h13",
         \ ]
 
   let s:WinSizeList = [
@@ -92,8 +92,12 @@ endif
 
 " Set GUI font by index
 function! s:SetGuiFont(Index)
+  let l:fonts = split(s:GuiFontList[a:Index])
   try
-    execute 'set guifont=' . s:GuiFontList[a:Index]
+    execute 'set guifont=' . l:fonts[0]
+    if len(l:fonts) > 1
+      execute 'set guifontwide=' . l:fonts[1]
+    endif
   catch
     return 1
   endtry
@@ -138,7 +142,9 @@ endfunction
 
 
 set guitablabel=%{GuiTabLabel()}
-set macligatures
+if has("gui_macvim")
+  set macligatures
+endif
 
 " Initialize GUI font and window settings
 call s:SetGuiFont(g:CUR_FONT_INDEX)
