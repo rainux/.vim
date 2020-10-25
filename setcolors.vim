@@ -12,8 +12,6 @@
 " colorscheme names that we use to set color
 let s:mycolors = [
       \ 'desert-warm-256',
-      \ 'onedark',
-      \ 'palenight',
       \ 'base16-gruvbox-dark-hard',
       \ 'base16-tomorrow-night',
       \ 'base16-tomorrow-night-eighties',
