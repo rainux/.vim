@@ -160,6 +160,9 @@ vmap <Leader>sym :s/[\\]\@<!\(['"]\)\([0-9A-Za-z_$]\+\)\1/:\2/gce<CR>
 " \hash Convert hash to Ruby 1.9's JSON-like style
 nmap <Leader>hash :%s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
 vmap <Leader>hash :s/\%(\w\|:\)\@1<!:\(\w\+\) *=> */\1: /gce<CR>
+" \url  Convert url to a relative path
+nmap <Leader>url :%s/https\?:\/\/[^/]\+\/\@=//gce<CR>
+vmap <Leader>url :s/https\?:\/\/[^/]\+\/\@=//gce<CR>
 
 " NERD Commenter mappings
 nmap ,cc        <Plug>NERDCommenterComment
@@ -174,6 +177,12 @@ nmap ,cn        <Plug>NERDCommenterNest
 vmap ,cn        <Plug>NERDCommenterNest
 nmap ,cu        <Plug>NERDCommenterUncomment
 vmap ,cu        <Plug>NERDCommenterUncomment
+" ....................................................................... }}}1
+
+" Ruby development  ..................................................... {{{1
+au FileType ruby map ,ta :RunAllRubyTests<CR>
+au FileType ruby map ,tc :RunRubyFocusedContext<CR>
+au FileType ruby map ,tt :RunRubyFocusedTest<CR>
 " ....................................................................... }}}1
 
 " Rust development  ..................................................... {{{1

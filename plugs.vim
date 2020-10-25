@@ -116,6 +116,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'davidoc/taskpaper.vim'
 " Easily interact with tmux from vim.
 Plug 'benmills/vimux'
+  Plug 'pgr0ss/vimux-ruby-test'
   Plug 'jtdowney/vimux-cargo'
 " Distraction-free writing in Vim.
 Plug 'junegunn/goyo.vim'
