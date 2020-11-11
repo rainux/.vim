@@ -84,6 +84,8 @@ map ,nt :NERDTreeTabsToggle<CR>
 map ,nf :NERDTreeTabsFind<CR>
 " ,tl   Toggle Tagbar
 map ,tl :TagbarToggle<CR>
+" ,al   Toggle ALE
+map ,al :ALEToggle<CR>
 
 " ,fo   Cycle GUI font
 " ,fi   Cycle GUI font in inverse order
