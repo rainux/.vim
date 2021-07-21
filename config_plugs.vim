@@ -625,8 +625,6 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_trailing_whitespace_error = 0
-let g:go_fmt_command = "goimports"
-let g:go_auto_sameids = 1
 
 au FileType go nmap ,r <Plug>(go-run)
 au FileType go nmap ,b <Plug>(go-build)
